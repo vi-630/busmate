@@ -1,8 +1,7 @@
 <header class="bg-dark">
     <div class="container">
         <nav class="navbar navbar-expand-sm navbar-dark position-relative">
-            <a class="navbar-brand" href="<?=URL?>">LOGO</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="/public/img/logo.png" alt="Logo BusMate" style="height: 50px;">            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 

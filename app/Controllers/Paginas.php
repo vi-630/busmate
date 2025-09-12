@@ -1,17 +1,18 @@
 <?php
 class Paginas extends Controllers{
     public function sobre(){
-        $dados = ['titulo'=>'Pagina Sobre nós', 'descricao'=>'Somos a maior empresa de tecnologia do Brasil', 'contato'=>'Estamos localizados na rua flores, jardim das maravilhas'];
-        $this->view('paginas/sobre', $dados);    
+        $this->view('paginas/sobre');    
     }//fim do método sobre
 
     public function index(){
-        $dados = ['titulo'=>'Pagina Inicial', 'descricao'=>'Aula de PHP Orientada a Objetos com MVC.'];
-        $this->view('paginas/home', $dados);
+        $this->view('paginas/home');
     }//fim da fução index
 
     public function contato(){
-        
+        $this->view('paginas/contato');
+    }
+    public function entrar(){
+        $this->view('paginas/entrar');
     }
 }//fim da classe Paginas
 ?>

@@ -9,15 +9,13 @@ include '../app/configuracao.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=APP_NOME?></title>
-    <link rel="stylesheet" href="<?= URL ?>/public/bootstrap/css/bootstrap.css">
-    <script src="<?URL?>/public/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="<?= URL ?>/public/css/estilo.css">
+    <script src="<?URL?>/public/"></script>
 </head>
 <body>
    <?php
    include '../app/Views/header.php';
-   $rotas = new Rota();
    include '../app/Views/footer.php';
-   //$rotas->url();
    ?>
 </body>
 </html>
