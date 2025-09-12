@@ -1,7 +1,8 @@
 <header class="bg-dark">
     <div class="container">
         <nav class="navbar navbar-expand-sm navbar-dark position-relative">
-            <img src="/public/img/logo.png" alt="Logo BusMate" style="height: 50px;">            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="<?=URL?>/public/img/logo.png" alt="Logo BusMate" style="height: 50px;">            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -14,23 +15,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?=URL?>/paginas/sobre" data-tooltip="tooltip" title="Sobre nós">Sobre nós</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=URL?>/paginas/contato" data-tooltip="tooltip" title="Contato">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=URL?>/paginas/entrar" data-tooltip="tooltip" title="Entrar">Entrar</a>
+                    </li>
                 </ul>
             </div>
-
-            <?php if(isset($_SESSION['usuario_id'])): ?>
-                <span class="navbar-text">
-                    <p>Olá, <?= $_SESSION['usuario_nome'] ?>, seja bem-vindo(a)!</p>
-                    <a class="btn btn-sm btn-danger" href="<?=URL?>/usuarios/sair" data-tooltip="tooltip" title="Sair do sistema">Sair</a>
-                </span>
-                <?php else: ?>
-
-            <!-- Botões alinhados à direita da tela -->
-            <div class="position-absolute" style="right: 0;">
-                <a class="btn btn-info mr-3" 
-                href="<?=URL?>/usuarios/cadastrar" data-tooltip="tooltip" title="Não tem uma conta? Cadastre-se">Cadastre-se</a>
-                <a class="btn btn-info" href="<?=URL?>/usuarios/login" data-tooltip="tooltip" title="Tem uma conta? Faça login">Entrar</a>
-            </div>
-            <?php endif; ?>
         </nav>
     </div>
 </header>
