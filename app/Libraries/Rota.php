@@ -21,7 +21,6 @@
             }//fim do if que verica se a url existe 
             $this->parametros = $url ? array_values($url): [];
             call_user_func_array([$this->controlador, $this->metodo], $this->parametros);
-            var_dump($this);
         }//fim do construtor
 
         private function url(){

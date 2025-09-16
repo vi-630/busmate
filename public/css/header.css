@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{ margin: 0; 
+    font-family: 'Poppins', sans-serif; 
+    padding-top: 70px;
+}
+
+:root{
+  --purple: #5a2ebf;
+  --purple-dark: #4a20ab;
+  --yellow: #f6c445;
+  --white: #ffffff;
+}
+
+.bg-dark{
+  background: var(--purple);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;          
+  left: 0;
+  z-index: 9999;     
+}
+
+.container{
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 12px;
+  min-height: 70px;
+  padding: 12px 20px;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar > img{
+  height: 34px;
+  width: auto;
+  margin-left: 10vh;
+}
+
+.navbar-collapse{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-nav{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link{
+  color: var(--yellow);
+  margin-right: 10vh;
+  margin-left: -10vh;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: color .2s ease, background .2s ease, transform .1s ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible{
+  color: var(--white);
+  background: rgba(255,255,255,.10);
+  outline: none;
+}
+.nav-link:active{ transform: translateY(1px); }
+.navbar-toggler {
+  display: none !important;
+}
+
+@media (max-width: 992px){
+  .navbar{ padding: 10px 14px; min-height: 64px; }
+  .navbar > img{ height: 30px; }
+  .navbar-nav{ gap: 18px; }
+}
+
+@media (max-width: 720px){
+  .navbar{ flex-wrap: wrap; }
+  .navbar-collapse{ width: 100%; justify-content: center; }
+  .navbar-nav{ flex-wrap: wrap; justify-content: center; gap: 16px; }
+}
+
+@media (max-width: 420px){
+  .navbar{ padding: 8px 10px; min-height: 56px; }
+  .navbar > img{ height: 26px; }
+  .nav-link{ font-weight: 600; padding: 6px 4px; }
+  .navbar-nav{ gap: 12px; }
+}
