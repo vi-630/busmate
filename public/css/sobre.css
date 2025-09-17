@@ -1,0 +1,106 @@
+.sobre-scope{
+  font-family:"Montserrat",system-ui,Arial,sans-serif;
+
+  --yellow:#f6c445;
+  --purple:#4a20ab;
+  --purple-2:#5a2ebf;
+  --text:#222;
+  --muted:#3a3a3a;
+  --page-bg:#F4F0FF;
+  --maxw:1120px;
+
+  background: var(--page-bg);
+}
+
+.sobre-scope *, .sobre-scope *::before, .sobre-scope *::after{
+   box-sizing:border-box; 
+}
+.sobre-scope .container{
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding-inline:clamp(16px,4vw,32px);
+}
+
+.sobre-scope .hero{
+  background: var(--yellow);
+  padding:clamp(28px,5vw,44px) 0 clamp(36px,6vw,56px);
+  text-align:center;
+}
+.sobre-scope .hero-inner{
+  display:flex; 
+  flex-direction:column; 
+  align-items:center; 
+}
+
+.sobre-scope .logo-hero{
+  height: clamp(90px, 5vw, 100px);
+  width:auto;
+  display:block;
+  margin:0 0 -10px;
+}
+
+.sobre-scope .hero-line{
+  margin:0;
+  font-weight:700;
+  font-size:clamp(18px,2.4vw,24px);
+  color:#5B2AA6;
+  max-width:900px;
+}
+
+.sobre-scope .about{ 
+  padding:clamp(32px,6vw,64px) 0 clamp(40px,8vw,80px); 
+}
+
+.sobre-scope .intro{
+  display:grid;
+  grid-template-columns:1fr minmax(280px,380px);
+  gap:clamp(20px,4vw,40px);
+  align-items:center;
+  margin-bottom:30px;
+}
+.sobre-scope .intro h2{
+  color:var(--purple);
+  font-weight:800;
+  margin:0 0 14px 0;
+  letter-spacing:.3px;
+  font-size:clamp(22px,2.4vw,28px);
+}
+.sobre-scope .intro p{
+  text-align:justify;
+  font-size:20px;            
+  color:var(--muted);
+  margin:0;
+}
+
+.sobre-scope .imagem-intro{ 
+  display:flex; 
+  justify-content:center; 
+}
+
+.sobre-scope .imagem-intro img{
+  width:100%;
+  max-width:200px;           
+  height:auto;
+  display:block;
+  border-radius:16px;
+  box-shadow:0 0 20px rgba(0,0,0,.18);
+}
+
+.sobre-scope .detalhes p{
+  margin:0 0 10px -15px;     
+  text-align:justify;
+  font-size:20px;            
+  color:var(--muted);
+}
+.sobre-scope .detalhes ul{
+  margin:10px 0 16px 20px;
+  font-size:20px;           
+}
+.sobre-scope .detalhes li{ 
+  margin-bottom:2px; 
+}
+
+@media (max-width:900px){
+  .sobre-scope .intro{ grid-template-columns:1fr; }
+  .sobre-scope .imagem-intro{ order:-1; margin-bottom:8px; }
+}

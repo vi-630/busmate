@@ -1,0 +1,140 @@
+:root {
+  --bm-purple: #5a2dcc;      
+  --bm-purple-700: #4b22b3;   
+  --bm-yellow: #f4c22b;       
+  --bm-bg: #efe7f7;          
+  --bm-text: #2b2b2b;
+  --bm-border: #c9b9ee;
+  --radius-xl: 28px;
+  --shadow-lg: 0 18px 40px rgba(40, 10, 90, .12);
+}
+
+.register-section {
+  position: relative;
+  background: var(--bm-bg);
+  padding: clamp(32px, 6vw, 64px) 16px;
+}
+
+.register-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 500px at 85% 40%, rgba(90,45,204,0.05), transparent 60%),
+    radial-gradient(800px 400px at 10% 60%, rgba(244,194,43,0.07), transparent 60%);
+  pointer-events: none;
+}
+
+.register-card {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(28px, 4vw, 44px) clamp(22px, 4vw, 56px);
+}
+
+.register-title {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(28px, 2.6vw, 36px);
+  color: var(--bm-purple);
+}
+
+.register-avatar {
+  width: 92px;
+  height: 92px;
+  margin: 18px auto 8px;
+  color: var(--bm-yellow);
+  display: grid;
+  place-items: center;
+}
+.register-avatar .avatar-svg {
+  width: 92%;
+  height: 92%;
+}
+
+.register-form {
+  margin-top: 10px;
+  display: grid;
+  gap: 14px;
+}
+
+.rf-label {
+  font-size: 0.95rem;
+  color: #4b4b4b;
+  margin-top: 6px;
+}
+
+.rf-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 2px solid var(--bm-border);
+  border-radius: 14px;
+  font-size: 1rem;
+  color: var(--bm-text);
+  outline: none;
+  background: #fff;
+  transition: border-color .2s, box-shadow .2s, background-color .2s;
+}
+.rf-input::placeholder { color: #9c8fbe; }
+
+.rf-input:focus {
+  border-color: var(--bm-purple);
+  box-shadow: 0 0 0 4px rgba(90,45,204,.12);
+}
+
+.rf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.rf-field { display: grid; gap: 6px; }
+
+.rf-select {
+  appearance: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='%235a2dcc'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 42px;
+}
+
+.register-btn {
+  margin: 8px auto 0;
+  display: inline-block;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: #4b3a00;
+  background: var(--bm-yellow);
+  box-shadow: 0 8px 18px rgba(244,194,43,.35);
+  transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
+}
+.register-btn:hover { filter: brightness(0.98); }
+.register-btn:active { transform: translateY(1px); }
+
+.register-login {
+  text-align: center;
+  margin: 14px 0 0;
+  color: #666;
+  font-size: .98rem;
+}
+.register-login a {
+  color: var(--bm-purple);
+  font-weight: 700;
+  text-decoration: none;
+}
+.register-login a:hover { color: var(--bm-purple-700); text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .rf-grid { grid-template-columns: 1fr; }
+  .register-card { padding: 28px 18px; }
+}

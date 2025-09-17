@@ -7,7 +7,7 @@
         <img class="hero-logo" src="<?=URL?>/public/img/logo_roxa.png" alt="BusMate">
         <h1>O sistema que<br>organiza o transporte<br>de alunos</h1>
         <p>Pagamentos, contratos e notificações em um só lugar.</p>
-        <a href="<?=URL?>/paginas/entrar" class="btn-cta">Cadastre-se</a>
+        <a href="<?=URL?>/paginas/cadastrar" class="btn-cta">Cadastre-se</a>
       </div>
 
       <div class="hero-art">
