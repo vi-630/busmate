@@ -1,8 +1,8 @@
 <i class="bi bi-bus-front"></i>
 <i class="bi bi-envelope-at-fill"></i>
 <i class="bi bi-telephone-fill"></i>
-<link rel="stylesheet" href="<?= URL ?>/public/css/estilo.css">
-<div class="container">
+<link rel="stylesheet" href="<?= URL ?>/public/css/contato.css">
+<div class="containerContato">
 <img src="<?=URL?>/public/img/logo_roxa.png" alt="BusMate Logo" class="logo">
 <h1>Entre em Contato</h1>
 <p>Entre em contato conosco para saber mais sobre o BusMate ou para obter suporte. Estamos aqui para ajudar!</p>
