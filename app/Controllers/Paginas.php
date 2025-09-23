@@ -15,5 +15,20 @@ class Paginas extends Controllers{
     public function cadastrar(){
         $this->view('paginas/cadastrar');
     }
+    public function index_app(){
+        $this->view('paginas/index_app');
+    }
+    public function perfil(){
+        $this->view('paginas/perfil');
+    }
+    public function forum(){
+        $this->view('paginas/forum');
+    }
+    public function manha(){
+        $this->view('paginas/manha');
+    }
+    public function tarde(){
+        $this->view('paginas/tarde');
+    }
 }//fim da classe Paginas
 ?>

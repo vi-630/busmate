@@ -6,7 +6,7 @@
     <div class="login-card">
       <h2>Acesse sua conta</h2>
 
-      <form class="login-form" onsubmit="event.preventDefault(); window.location.href='<?=URL?>/paginas/';">
+      <form class="login-form" action="<?=URL?>/paginas/index_app">
         <label class="sr-only" for="email">E-mail</label>
         <input id="email" type="email" name="email" placeholder="E-mail" required>
 
