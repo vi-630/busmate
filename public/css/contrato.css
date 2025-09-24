@@ -1,0 +1,45 @@
+:root{
+  --purple:#390b94; --purple-dark:#4a20ab; --gold:#f6c445;
+  --sidebar-yellow:#e5b021; --lavender:#eee5ff; --white:#fff; --text:#1f1f1f;
+  --shadow:0 10px 24px rgba(0,0,0,.08); --maxw:1120px;
+}
+
+.app-layout{ display:grid; grid-template-columns:260px 1fr; gap:28px; padding:0 24px 0 0; background:var(--lavender);}
+.sidebar{ background:var(--sidebar-yellow); border-right:4px solid rgba(0,0,0,.07); border-radius:0 20px 20px 0; padding:22px 18px; position:sticky; top:70px;}
+.profile{ display:grid; place-items:center; row-gap:10px; margin-bottom:18px;}
+.avatar{ width:90px;height:90px;border-radius:50%;background:#f8e4a8;display:grid;place-items:center;font-size:42px;color:var(--purple);border:3px solid rgba(0,0,0,.08);}
+.user-name{ font-weight:700; color:#3a2c00;}
+.menu{ display:grid; gap:8px; margin-top:6px;}
+.menu .item{ display:grid; grid-template-columns:26px 1fr; gap:10px; align-items:center; padding:10px 12px; border-radius:12px; color:#2d2200; text-decoration:none; font-weight:600;}
+.menu .item.active{ background:rgba(255,255,255,.55); outline:2px solid rgba(255,255,255,.7);}
+
+.content{ max-width:var(--maxw); padding-bottom:28px;}
+.page-head h1{ margin:14px 10vh; color:var(--purple-dark); font-weight:800; font-size:clamp(22px,3vw,28px);}
+
+/* ===== card ===== */
+.contract-card{
+  margin: 0 10vh 24px;
+  background:var(--white);
+  border-radius:16px;
+  border:2px solid color-mix(in oklab, var(--purple) 38%, white);
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+.top-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:18px;}
+
+/* botões */
+.btn{ display:inline-grid; grid-auto-flow:column; gap:10px; align-items:center; padding:10px 16px; border-radius:12px; font-weight:700; border:2px solid transparent; text-decoration:none; cursor:pointer;}
+.btn-outline{ background:#fff; color:var(--purple-dark); border:2px solid color-mix(in oklab, var(--purple) 35%, white);}
+.btn-primary{ background:var(--purple-dark); color:#fff; }
+
+/* upload form */
+.upload-form{ display:grid; gap:16px; }
+.file-field{ display:grid; grid-auto-flow:column; align-items:center; gap:10px; padding:12px 14px; border-radius:10px; background:#fff; border:2px solid color-mix(in oklab, var(--purple) 35%, white); color:var(--purple-dark);}
+.file-field input{ display:none; }
+.file-field:hover{ background:#faf7ff; cursor:pointer; }
+
+/* responsivo */
+@media (max-width:900px){
+  .page-head h1{ margin:12px 16px; }
+  .contract-card{ margin:0 16px 20px; }
+}

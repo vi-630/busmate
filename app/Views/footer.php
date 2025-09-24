@@ -21,9 +21,9 @@
     <div class="footer-col">
       <h4>Suporte</h4>
       <ul>
-        <li><a href="#">Central de Ajuda</a></li>
-        <li><a href="#">Políticas de Privacidade</a></li>
-        <li><a href="#">Termos de Uso</a></li>
+        <li><a href="<?=URL?>/paginas/central_ajuda">Central de Ajuda</a></li>
+        <li><a href="<?=URL?>/paginas/politica_privacidade">Políticas de Privacidade</a></li>
+        <li><a href="<?=URL?>/paginas/termo_uso">Termos de Uso</a></li>
       </ul>
     </div>
 

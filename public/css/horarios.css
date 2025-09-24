@@ -1,0 +1,75 @@
+:root{
+  --purple: #390b94;
+  --purple-dark: #4a20ab;
+  --lavender: #eee5ff;
+  --text: #1f1f1f;
+  --white: #fff;
+  --shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.manha-content{
+  background: var(--lavender);
+  padding: 24px 10vh 40px 10vh;
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+}
+
+.page-head h1{
+  text-align: center;
+  margin-bottom: 18px;
+  color: var(--purple-dark);
+  font-size: clamp(24px, 3.4vw, 36px);
+  font-weight: 800;
+}
+
+.bus-hero{ margin: 0 0 20px 0; }
+.bus-photo{
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 2px solid color-mix(in oklab, var(--purple) 30%, white);
+}
+
+.info-card{
+  background: var(--white);
+  border-radius: 14px;
+  border: 2px solid color-mix(in oklab, var(--purple) 38%, white);
+  box-shadow: var(--shadow);
+  padding: 16px 20px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.info-card .motorista{
+  margin: 0 0 10px 0;
+  color: var(--text);
+  font-size: 16px;
+}
+.info-card .motorista strong{ color: var(--purple-dark); }
+
+.horarios-ponto h2{
+  margin: 4px 0 8px 0;
+  color: var(--purple-dark);
+  font-size: 18px;
+  font-weight: 800;
+}
+.horarios-ponto ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.horarios-ponto li{
+  margin: 4px 0;
+  font-size: 15px;
+  color: var(--text);
+}
+.horarios-ponto li strong{ color: var(--purple); }
+
+@media (max-width: 760px){
+  .manha-content{
+    padding: 16px;
+  }
+  .bus-photo{ max-width: 100%; }
+}

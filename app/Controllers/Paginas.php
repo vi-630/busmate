@@ -30,5 +30,17 @@ class Paginas extends Controllers{
     public function tarde(){
         $this->view('paginas/tarde');
     }
+    public function contrato(){
+        $this->view('paginas/contrato');
+    }
+    public function termo_uso(){
+        $this->view('paginas/termo_uso');
+    }
+    public function politica_privacidade(){
+        $this->view('paginas/politica_privacidade');
+    }
+    public function central_ajuda(){
+        $this->view('paginas/central_ajuda');
+    }
 }//fim da classe Paginas
 ?>
