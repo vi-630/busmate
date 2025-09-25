@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="<?= URL ?>/public/css/home.css">
 </head>
+
 <section class="hero-busmate">
     <div class="wrap hero-grid">
       <div class="hero-copy">
@@ -14,7 +15,7 @@
         <img src="<?=URL?>/public/img/celular.png" alt="App BusMate">
       </div>
     </div>
-  </section>
+</section>
 
   <section class="what-we-do">
     <div class="wrap">

@@ -1,14 +1,15 @@
 :root{
-  --purple: #390b94;
-  --purple-dark: #4a20ab;
-  --lavender: #eee5ff;
-  --text: #1f1f1f;
-  --white: #fff;
-  --shadow: 0 10px 24px rgba(0,0,0,.08);
+  --roxo: var(--bm-purple);
+  --roxo-vivo: #390b94;
+  --roxo-claro: var(--bm-bg);
+  --preto: var(--bm-ink);
+  --branco: var(--bm-white);
+  --shadow: 0 10px 24px rgba(0,0,0,.10);
+  --border: color-mix(in oklab, var(--roxo) 32%, white);
 }
 
 .manha-content{
-  background: var(--lavender);
+  background: var(--roxo-claro);
   padding: 24px 10vh 40px 10vh;
   min-height: calc(100vh - 70px);
   box-sizing: border-box;
@@ -17,7 +18,7 @@
 .page-head h1{
   text-align: center;
   margin-bottom: 18px;
-  color: var(--purple-dark);
+  color: var(--roxo-vivo);
   font-size: clamp(24px, 3.4vw, 36px);
   font-weight: 800;
 }
@@ -29,13 +30,13 @@
   max-width: 760px;
   margin: 0 auto;
   border-radius: 16px;
-  border: 2px solid color-mix(in oklab, var(--purple) 30%, white);
+  border: 2px solid var(--border);
 }
 
 .info-card{
-  background: var(--white);
+  background: var(--branco);
   border-radius: 14px;
-  border: 2px solid color-mix(in oklab, var(--purple) 38%, white);
+  border: 2px solid var(--border);
   box-shadow: var(--shadow);
   padding: 16px 20px;
   max-width: 760px;
@@ -44,32 +45,26 @@
 
 .info-card .motorista{
   margin: 0 0 10px 0;
-  color: var(--text);
+  color: var(--preto);
   font-size: 16px;
 }
-.info-card .motorista strong{ color: var(--purple-dark); }
+.info-card .motorista strong{ color: var(--roxo-vivo); }
 
 .horarios-ponto h2{
   margin: 4px 0 8px 0;
-  color: var(--purple-dark);
+  color: var(--roxo-vivo);
   font-size: 18px;
   font-weight: 800;
 }
-.horarios-ponto ul{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.horarios-ponto ul{ list-style: none; padding: 0; margin: 0; }
 .horarios-ponto li{
   margin: 4px 0;
   font-size: 15px;
-  color: var(--text);
+  color: var(--preto);
 }
-.horarios-ponto li strong{ color: var(--purple); }
+.horarios-ponto li strong{ color: var(--roxo); }
 
 @media (max-width: 760px){
-  .manha-content{
-    padding: 16px;
-  }
+  .manha-content{ padding: 16px; }
   .bus-photo{ max-width: 100%; }
 }

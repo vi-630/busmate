@@ -1,36 +1,32 @@
-/* ====== CONTATO (miolo) ====== */
 :root{
-  --purple: #390b94;         /* roxo principal */
-  --purple-dark: #4a20ab;    /* roxo mais escuro p/ hover */
-  --gold: #f6c445;           /* amarelo da faixa do título */
-  --lavender: #e7def9;       /* lilás do fundo dos cards */
-  --text: #1f1f1f;
-  --white: #ffffff;
-  --radius-xl: 28px;
-  --shadow: 0 10px 25px rgba(0,0,0,.08);
+  --roxo: var(--bm-purple);
+  --amarelo: ##fcc516;      /* faixa do título */
+  --roxo-vivo: #390b94;    /* títulos */
+  --roxo-claro: var(--bm-bg);   /* fundo dos cards */
+  --branco: var(--bm-white);
+  --preto: var(--bm-ink);
+
+  --texto: var(--preto);
+  --radius-xl: 24px;
+  --shadow: 0 10px 24px rgba(0,0,0,.10);
 }
 
 .containerContato{
-  width: 100%;
-  background: var(--gold);
+  background: var(--amarelo);
+  padding: 40px 0;
   text-align: center;
-  padding: clamp(32px, 6vw, 72px) 16px;
-  box-sizing: border-box;
 }
 
 .containerContato .logo{
-  height: clamp(90px, 5vw, 100px);
-  width:auto;
-  display:block;
-  margin:0 auto -10px;
-  
+  height: 90px; 
+  margin-bottom: -20px; 
 }
 
 .containerContato h1{
   margin: 8px 0 10px 0;
   font-size: clamp(28px, 4.6vw, 44px);
   line-height: 1.1;
-  color: var(--purple);
+  color: var(--roxo-vivo);
   font-weight: 800;
   letter-spacing: .3px;
 }
@@ -38,13 +34,13 @@
 .containerContato p{
   max-width: 820px;
   margin: 0 auto;
-  color: var(--text);
+  color: var(--texto);
   font-size: clamp(14px, 1.8vw, 18px);
 }
 
 .conteudo{
   width: 100%;
-  background: var(--lavender);
+  background: var(--roxo-claro);
   padding: clamp(28px, 6vw, 60px) 16px;
   display: grid;
   grid-template-columns: repeat(3, minmax(220px, 1fr));
@@ -57,7 +53,7 @@
 .card{
   width: 100%;
   max-width: 360px;
-  background: var(--white);
+  background: var(--branco);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
   padding: clamp(20px, 3.5vw, 28px);
@@ -67,20 +63,20 @@
 .card svg{
   display: block;
   margin: 6px auto 14px auto;
-  color: var(--purple);
+  color: var(--roxo-vivo);
 }
 
 .card h3{
   margin: 4px 0 6px 0;
   font-size: clamp(16px, 2.1vw, 18px);
-  color: var(--purple-dark);
+  color: var(--roxo);
   font-weight: 700;
 }
 
 .card p{
   margin: 0;
   font-size: clamp(14px, 1.9vw, 15px);
-  color: var(--text);
+  color: var(--texto);
 }
 
 @media (max-width: 1024px){
@@ -106,13 +102,12 @@
   }
 }
 
-.card:focus-within,
-.card:focus{
-  outline: 3px solid color-mix(in oklab, var(--purple) 45%, white);
+.card:focus-within,.card:focus{
+  outline: 3px solid color-mix(in oklab, var(--roxo) 45%, white);
   outline-offset: 2px;
 }
 
 .conteudo .card a{
-  color: var(--purple);
+  color: var(--roxo);
   text-underline-offset: 3px;
 }

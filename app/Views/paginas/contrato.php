@@ -22,9 +22,6 @@
       <a href="<?=URL?>/paginas/forum" class="item">
         <i class="bi bi-chat-dots-fill"></i><span>Fórum</span>
       </a>
-      <a href="<?=URL?>/paginas/contrato" class="item active">
-        <i class="bi bi-file-earmark-text-fill"></i><span>Contrato</span>
-      </a>
     </nav>
   </aside>
 

@@ -1,20 +1,18 @@
 .sobre-scope{
   font-family:"Montserrat",system-ui,Arial,sans-serif;
 
-  --yellow:#f6c445;
-  --purple:#4a20ab;
-  --purple-2:#5a2ebf;
-  --text:#222;
+  --amarelo:var(--bm-yellow);
+  --roxo-vivo:#390b94;
+  --roxo:var(--bm-purple);
+  --texto:var(--bm-ink);
   --muted:#3a3a3a;
-  --page-bg:#F4F0FF;
+  --page-bg:var(--bm-bg);
   --maxw:1120px;
 
   background: var(--page-bg);
 }
 
-.sobre-scope *, .sobre-scope *::before, .sobre-scope *::after{
-   box-sizing:border-box; 
-}
+.sobre-scope *, .sobre-scope *::before, .sobre-scope *::after{ box-sizing:border-box; }
 .sobre-scope .container{
   max-width:var(--maxw);
   margin-inline:auto;
@@ -22,15 +20,11 @@
 }
 
 .sobre-scope .hero{
-  background: var(--yellow);
+  background: var(--amarelo);
   padding:clamp(28px,5vw,44px) 0 clamp(36px,6vw,56px);
   text-align:center;
 }
-.sobre-scope .hero-inner{
-  display:flex; 
-  flex-direction:column; 
-  align-items:center; 
-}
+.sobre-scope .hero-inner{ display:flex; flex-direction:column; align-items:center; }
 
 .sobre-scope .logo-hero{
   height: clamp(90px, 5vw, 100px);
@@ -43,13 +37,11 @@
   margin:0;
   font-weight:700;
   font-size:clamp(18px,2.4vw,24px);
-  color:#5B2AA6;
+  color: var(--roxo-vivo);
   max-width:900px;
 }
 
-.sobre-scope .about{ 
-  padding:clamp(32px,6vw,64px) 0 clamp(40px,8vw,80px); 
-}
+.sobre-scope .about{ padding:clamp(32px,6vw,64px) 0 clamp(40px,8vw,80px); }
 
 .sobre-scope .intro{
   display:grid;
@@ -59,7 +51,7 @@
   margin-bottom:30px;
 }
 .sobre-scope .intro h2{
-  color:var(--purple);
+  color:var(--roxo);
   font-weight:800;
   margin:0 0 14px 0;
   letter-spacing:.3px;
@@ -67,19 +59,15 @@
 }
 .sobre-scope .intro p{
   text-align:justify;
-  font-size:20px;            
+  font-size:20px;
   color:var(--muted);
   margin:0;
 }
 
-.sobre-scope .imagem-intro{ 
-  display:flex; 
-  justify-content:center; 
-}
-
+.sobre-scope .imagem-intro{ display:flex; justify-content:center; }
 .sobre-scope .imagem-intro img{
   width:100%;
-  max-width:200px;           
+  max-width:200px;
   height:auto;
   display:block;
   border-radius:16px;
@@ -87,18 +75,13 @@
 }
 
 .sobre-scope .detalhes p{
-  margin:0 0 10px -15px;     
+  margin:0 0 10px -15px;
   text-align:justify;
-  font-size:20px;            
+  font-size:20px;
   color:var(--muted);
 }
-.sobre-scope .detalhes ul{
-  margin:10px 0 16px 20px;
-  font-size:20px;           
-}
-.sobre-scope .detalhes li{ 
-  margin-bottom:2px; 
-}
+.sobre-scope .detalhes ul{ margin:10px 0 16px 20px; font-size:20px; }
+.sobre-scope .detalhes li{ margin-bottom:2px; }
 
 @media (max-width:900px){
   .sobre-scope .intro{ grid-template-columns:1fr; }

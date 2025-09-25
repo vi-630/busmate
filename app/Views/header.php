@@ -1,4 +1,5 @@
 <head>
+    <link rel="stylesheet" href="<?= URL ?>/public/css/tokens.css">
     <link rel="stylesheet" href="<?= URL ?>/public/css/header.css">
 </head>
 <header class="bg-dark">

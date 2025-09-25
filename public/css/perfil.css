@@ -1,7 +1,7 @@
 :root{
-  --purple:#390b94; --purple-dark:#4a20ab; --gold:#f6c445;
-  --sidebar-yellow:#e5b021; --lavender:#eee5ff;
-  --text:#1f1f1f; --white:#fff;
+  --purple:#390b94; --purple-dark:var(--bm-purple-700); --gold:var(--bm-yellow);
+  --sidebar-yellow:#e5b021; --lavender:var(--bm-bg);
+  --text:var(--bm-ink); --white:var(--bm-white);
   --shadow:0 10px 24px rgba(0,0,0,.08); --maxw:1120px;
 }
 
@@ -64,7 +64,7 @@
   display: grid;
   place-items: center;
   font-size: 80px;
-  color: #fff;
+  color: var(--bm-white);
   border: 4px solid color-mix(in oklab, var(--purple) 35%, white);
   box-shadow: var(--shadow);
 }
@@ -74,15 +74,14 @@
   padding: 8px 14px;
 }
 
-
 .btn{ padding:10px 16px; border-radius:12px; cursor:pointer; text-decoration:none; font-weight:600; border:2px solid transparent; }
-.btn-primary{ background:var(--purple-dark); color:#fff; }
+.btn-primary{ background:var(--purple-dark); color:var(--bm-white); }
 .btn-secondary{ background:var(--gold); color:#2a1767; }
-.btn-outline{ background:#fff; color:var(--purple-dark); border:2px solid var(--purple-dark); }
+.btn-outline{ background:var(--bm-white); color:var(--purple-dark); border:2px solid var(--purple-dark); }
 
 /* estado de edição: apenas um feedback visual leve */
 .dados-form input.is-editing{
-  background: #fffdfa;
+  background: var(--bm-white)dfa;
   border-color: color-mix(in oklab, var(--purple) 35%, white);
   box-shadow: 0 0 0 3px rgba(90, 45, 204, .10);
 }
@@ -96,7 +95,7 @@
 }
 /* feedback visual no modo edição */
 .dados-form input.is-editing{
-  background: #fffdfa;
+  background: var(--bm-white)dfa;
   border-color: color-mix(in oklab, var(--purple) 35%, white);
   box-shadow: 0 0 0 3px rgba(90, 45, 204, .10);
 }

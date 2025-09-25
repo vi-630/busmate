@@ -1,17 +1,31 @@
 :root {
-  --bm-purple: #5a2dcc;      
-  --bm-purple-700: #4b22b3;   
-  --bm-yellow: #f4c22b;       
-  --bm-bg: #efe7f7;          
-  --bm-text: #2b2b2b;
-  --bm-border: #c9b9ee;
-  --radius-xl: 28px;
-  --shadow-lg: 0 18px 40px rgba(40, 10, 90, .12);
+  /* Paleta padrão */
+  --roxo: var(--bm-purple);
+  --amarelo: var(--bm-yellow);
+  --roxo-vivo: #390b94;   /* títulos */
+  --preto: var(--bm-ink);
+  --roxo-claro: var(--bm-bg);  /* fundo */
+  --branco: var(--bm-white);
+
+  /* Neutros e layout */
+  --texto: var(--preto);
+  --surface: var(--branco);
+  --border: color-mix(in oklab, var(--roxo) 22%, white);
+  --maxw: 1120px;
+
+  /* Radius e sombras padrão */
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 18px 40px rgba(0,0,0,.12);
+  --shadow-md: 0 10px 24px rgba(0,0,0,.10);
+  --shadow-sm: 0 6px 16px rgba(0,0,0,.08);
 }
 
 .register-section {
   position: relative;
-  background: var(--bm-bg);
+  background: var(--roxo-claro);
   padding: clamp(32px, 6vw, 64px) 16px;
 }
 
@@ -19,8 +33,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(1200px 500px at 85% 40%, rgba(90,45,204,0.05), transparent 60%),
-    radial-gradient(800px 400px at 10% 60%, rgba(244,194,43,0.07), transparent 60%);
+    radial-gradient(1200px 500px at 85% 40%, color-mix(in oklab, var(--roxo) 15%, transparent), transparent 60%),
+    radial-gradient(800px 400px at 10% 60%, color-mix(in oklab, var(--amarelo) 18%, transparent), transparent 60%);
   pointer-events: none;
 }
 
@@ -29,7 +43,7 @@
   z-index: 1;
   max-width: 980px;
   margin: 0 auto;
-  background: #fff;
+  background: var(--surface);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
   padding: clamp(28px, 4vw, 44px) clamp(22px, 4vw, 56px);
@@ -40,17 +54,18 @@
   text-align: center;
   font-weight: 800;
   font-size: clamp(28px, 2.6vw, 36px);
-  color: var(--bm-purple);
+  color: var(--roxo);
 }
 
 .register-avatar {
   width: 92px;
   height: 92px;
   margin: 18px auto 8px;
-  color: var(--bm-yellow);
+  color: var(--amarelo);
   display: grid;
   place-items: center;
 }
+
 .register-avatar .avatar-svg {
   width: 92%;
   height: 92%;
@@ -72,19 +87,22 @@
   width: 100%;
   height: 48px;
   padding: 0 14px;
-  border: 2px solid var(--bm-border);
-  border-radius: 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
   font-size: 1rem;
-  color: var(--bm-text);
+  color: var(--texto);
   outline: none;
-  background: #fff;
+  background: var(--surface);
   transition: border-color .2s, box-shadow .2s, background-color .2s;
 }
-.rf-input::placeholder { color: #9c8fbe; }
+
+.rf-input::placeholder { 
+  color: color-mix(in oklab, var(--roxo) 45%, white); 
+}
 
 .rf-input:focus {
-  border-color: var(--bm-purple);
-  box-shadow: 0 0 0 4px rgba(90,45,204,.12);
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--roxo) 24%, transparent);
 }
 
 .rf-grid {
@@ -92,12 +110,16 @@
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
-.rf-field { display: grid; gap: 6px; }
+
+.rf-field { 
+  display: grid; 
+  gap: 6px; 
+}
 
 .rf-select {
   appearance: none;
   background-image:
-    url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='%235a2dcc'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='%235a1eaf'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 20px;
@@ -108,18 +130,24 @@
   margin: 8px auto 0;
   display: inline-block;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 14px 28px;
   font-weight: 800;
   font-size: 1.05rem;
   cursor: pointer;
-  color: #4b3a00;
-  background: var(--bm-yellow);
-  box-shadow: 0 8px 18px rgba(244,194,43,.35);
+  color: #3b2d00;
+  background: var(--amarelo);
+  box-shadow: var(--shadow-sm);
   transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
 }
-.register-btn:hover { filter: brightness(0.98); }
-.register-btn:active { transform: translateY(1px); }
+
+.register-btn:hover { 
+  filter: brightness(0.98); 
+}
+
+.register-btn:active { 
+  transform: translateY(1px); 
+}
 
 .register-login {
   text-align: center;
@@ -127,12 +155,17 @@
   color: #666;
   font-size: .98rem;
 }
+
 .register-login a {
-  color: var(--bm-purple);
+  color: var(--roxo);
   font-weight: 700;
   text-decoration: none;
 }
-.register-login a:hover { color: var(--bm-purple-700); text-decoration: underline; }
+
+.register-login a:hover { 
+  color: var(--roxo-vivo); 
+  text-decoration: underline; 
+}
 
 /* ===== Foto no cadastro ===== */
 .rf-photo{
@@ -146,11 +179,11 @@
   width: 108px;
   height: 108px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--surface);
   display: grid;
   place-items: center;
-  border: 4px solid var(--bm-border);
-  box-shadow: 0 12px 26px rgba(40, 10, 90, .10);
+  border: 4px solid var(--border);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 .rf-avatar img{
@@ -164,7 +197,7 @@
 .rf-avatar .avatar-svg {
   width: 92%;
   height: 92%;
-  color: var(--bm-yellow); /* agora fica no amarelo padrão */
+  color: var(--amarelo);
 }
 
 .rf-file-btn{
@@ -173,30 +206,39 @@
   gap: 8px;
   align-items: center;
   padding: 10px 16px;
-  border-radius: 12px;
-  border: 2px solid var(--bm-purple);
-  background: #fff;
-  color: var(--bm-purple);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--roxo);
+  background: var(--surface);
+  color: var(--roxo);
   font-weight: 800;
   cursor: pointer;
   transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
 }
-.rf-file-btn:hover{ filter: brightness(0.98); }
-.rf-file-btn:active{ transform: translateY(1px); }
+
+.rf-file-btn:hover{ 
+  filter: brightness(0.98); 
+}
+
+.rf-file-btn:active{ 
+  transform: translateY(1px); 
+}
 
 .rf-hint{
-  color: #7a70a7;
+  color: color-mix(in oklab, var(--roxo) 50%, #6c6c6c);
   font-size: .88rem;
 }
 
 /* Opcional: harmoniza com o foco dos inputs */
 .rf-file-btn:focus-visible{
   outline: none;
-  box-shadow: 0 0 0 4px rgba(90,45,204,.12);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--roxo) 24%, transparent);
 }
 
-
 @media (max-width: 760px) {
-  .rf-grid { grid-template-columns: 1fr; }
-  .register-card { padding: 28px 18px; }
+  .rf-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .register-card { 
+    padding: 28px 18px; 
+  }
 }

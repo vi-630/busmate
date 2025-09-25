@@ -1,11 +1,11 @@
 :root{
   --purple: #390b94;
-  --purple-dark: #4a20ab;
-  --gold: #f6c445;
+  --purple-dark: var(--bm-purple-700);
+  --gold: var(--bm-yellow);
   --sidebar-yellow: #e5b021;
-  --lavender: #eee5ff;
-  --text: #1f1f1f;
-  --white: #fff;
+  --lavender: var(--bm-bg);
+  --text: var(--bm-ink);
+  --white: var(--bm-white);
   --radius-xl: 22px;
   --shadow: 0 10px 24px rgba(0,0,0,.08);
   --maxw: 1120px;
@@ -169,3 +169,16 @@
   }
   .menu .item span{ font-size: 14px; }
 }
+
+/* em index_app.css, contrato.css, perfil.css etc. */
+.sidebar{ top: var(--header-h); }
+
+/* === Patch: alinhar sidebar ao header sticky e mobile melhor === */
+@media (min-width: 901px){
+  .sidebar{ top: 70px; }
+}
+@media (max-width: 760px){
+  .app-layout{ grid-template-columns: 1fr; gap: 16px; padding: 0; }
+  .sidebar{ position: relative; top: 0; border-radius: 14px; }
+}
+.content{ min-width: 0; } /* evita transbordo de textos/ícones */

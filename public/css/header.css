@@ -1,104 +1,169 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-*{ box-sizing: border-box; }
-html, body{ height: 100%; }
-body{ margin: 0; 
-    font-family: 'Poppins', sans-serif; 
-    padding-top: 70px;
+*{ 
+  box-sizing: border-box; 
 }
 
+html, body{ 
+  height: 100%; 
+}
+
+body{ 
+  margin: 0; 
+  font-family: 'Poppins', sans-serif; 
+}
+
+/* aliases locais (vem do tokens.css) */
 :root{
-  --purple: #5a2ebf;
-  --purple-dark: #4a20ab;
-  --yellow: #f6c445;
-  --white: #ffffff;
+  --purple: var(--bm-purple);
+  --purple-dark: var(--bm-purple-700);
+  --yellow: var(--bm-yellow);
+  --white: var(--bm-white);
 }
 
+/* ===== Header STICKY sem gap ===== */
 .bg-dark{
   background: var(--purple);
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  position: fixed;
-  top: 0;          
-  left: 0;
-  z-index: 9999;     
+  position: sticky; 
+  top: 0; 
+  left: 0; 
+  right: 0;
+  z-index: 9999;
 }
 
-.container{
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+/* mata o “vão” (colapso de margem) do primeiro bloco após o header */
+header.bg-dark + *{ 
+  margin-top: 0 !important; 
+  border-top: 1px solid transparent; 
 }
 
+/* container full-width (você usa esse nome em vários lugares) */
+.container{ 
+  max-width: 100%; 
+  margin: 0; 
+  padding: 0; 
+}
+
+/* navbar base */
 .navbar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-  gap: 12px;
-  min-height: 70px;
-  padding: 12px 20px;
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between;
+  gap:12px; 
+  min-height:70px; 
+  padding:12px 20px;
   color: var(--white);
-  font-family: 'Poppins', sans-serif;
 }
 
 .navbar > img{
-  height: 34px;
-  width: auto;
-  margin-left: 10vh;
+  width:auto !important; 
+  height:auto !important;
+  max-height:34px; 
+  margin-left: 10vh; /* como você tinha no desktop */
 }
 
-.navbar-collapse{
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+/* menu */
+.navbar-collapse{ 
+  flex:1; 
+  display:flex; 
+  justify-content:flex-end; 
 }
 
 .navbar-nav{
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display:flex; 
+  align-items:center; 
+  gap:28px; 
+  list-style:none; 
+  margin:0; 
+  padding:0;
 }
 
 .nav-link{
   color: var(--yellow);
-  margin-right: 10vh;
-  margin-left: -10vh;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 20px;
+  margin-right: 10vh; 
+  margin-left: -10vh; /* seu espaçamento no desktop */
+  text-decoration:none; 
+  font-size:20px; 
+  padding:10px 20px; 
+  border-radius:20px;
   transition: color .2s ease, background .2s ease, transform .1s ease;
 }
-.nav-link:hover,
-.nav-link:focus-visible{
-  color: var(--white);
-  background: rgba(255,255,255,.10);
+
+.nav-link:hover, .nav-link:focus-visible{
+  color: var(--white); 
+  background: rgba(255,255,255,.10); 
   outline: none;
 }
-.nav-link:active{ transform: translateY(1px); }
-.navbar-toggler {
-  display: none !important;
+
+.nav-link:active{ 
+  transform: translateY(1px); 
 }
 
+.navbar-toggler{ 
+  display:none !important; 
+}
+
+/* ===== Ajustes responsivos ===== */
 @media (max-width: 992px){
-  .navbar{ padding: 10px 14px; min-height: 64px; }
-  .navbar > img{ height: 30px; }
-  .navbar-nav{ gap: 18px; }
+  .navbar{ 
+    padding:10px 14px; 
+    min-height:64px; 
+  }
+  .navbar > img{ 
+    max-height:30px; 
+    margin-left: 0; 
+  }
+  .navbar-nav{ 
+    gap:18px; 
+  }
 }
 
-@media (max-width: 720px){
-  .navbar{ flex-wrap: wrap; }
-  .navbar-collapse{ width: 100%; justify-content: center; }
-  .navbar-nav{ flex-wrap: wrap; justify-content: center; gap: 16px; }
+/* Mobile: IMAGEM 3 (logo 1ª linha, menu 2ª) */
+@media (max-width: 900px){
+  .navbar{
+    display: grid;
+    grid-template-areas:
+      "logo"
+      "menu";
+    row-gap: 8px;
+    padding: 10px 12px;
+  }
+  .navbar > img{
+    grid-area: logo; 
+    justify-self: center; 
+    align-self: center; 
+    margin: 0;
+  }
+  .navbar-collapse{
+    grid-area: menu; 
+    flex: 0 0 100%;
+    display: flex; 
+    justify-content: center !important;
+  }
+  .navbar-nav{
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 16px;
+  }
+  .nav-link{ 
+    margin: 0; 
+    padding: 8px 12px; 
+    border-radius: 12px; 
+    font-size: 18px; 
+  }
 }
 
+/* super-estreito */
 @media (max-width: 420px){
-  .navbar{ padding: 8px 10px; min-height: 56px; }
-  .navbar > img{ height: 26px; }
-  .nav-link{ font-weight: 600; padding: 6px 4px; }
-  .navbar-nav{ gap: 12px; }
+  .navbar{ 
+    padding: 8px 10px; 
+  }
+  .navbar-nav{ 
+    gap: 12px; 
+  }
+  .nav-link{ 
+    font-weight:600; 
+    padding: 6px 8px; 
+    font-size: 17px; 
+  }
 }
