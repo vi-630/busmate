@@ -1,19 +1,14 @@
 :root {
-  /* Paleta padrão */
   --roxo: var(--bm-purple);
   --amarelo: var(--bm-yellow);
-  --roxo-vivo: #390b94;   /* títulos */
+  --roxo-vivo: #390b94;   
   --preto: var(--bm-ink);
-  --roxo-claro: var(--bm-bg);  /* fundo */
+  --roxo-claro: var(--bm-bg); 
   --branco: var(--bm-white);
-
-  /* Neutros e layout */
   --texto: var(--preto);
   --surface: var(--branco);
   --border: color-mix(in oklab, var(--roxo) 22%, white);
   --maxw: 1120px;
-
-  /* Radius e sombras padrão */
   --radius-xl: 24px;
   --radius-lg: 18px;
   --radius-md: 14px;
@@ -167,15 +162,14 @@
   text-decoration: underline; 
 }
 
-/* ===== Foto no cadastro ===== */
-.rf-photo{
+.rf-photo {
   display: grid;
   justify-items: center;
   gap: 10px;
   margin: 18px 0 6px;
 }
 
-.rf-avatar{
+.rf-avatar {
   width: 108px;
   height: 108px;
   border-radius: 50%;
@@ -186,21 +180,21 @@
   box-shadow: var(--shadow-md);
   overflow: hidden;
 }
-.rf-avatar img{
+
+.rf-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-/* Cor padrão do avatar em SVG */
 .rf-avatar .avatar-svg {
   width: 92%;
   height: 92%;
   color: var(--amarelo);
 }
 
-.rf-file-btn{
+.rf-file-btn {
   display: inline-grid;
   grid-auto-flow: column;
   gap: 8px;
@@ -215,21 +209,20 @@
   transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
 }
 
-.rf-file-btn:hover{ 
+.rf-file-btn:hover { 
   filter: brightness(0.98); 
 }
 
-.rf-file-btn:active{ 
+.rf-file-btn:active { 
   transform: translateY(1px); 
 }
 
-.rf-hint{
+.rf-hint {
   color: color-mix(in oklab, var(--roxo) 50%, #6c6c6c);
   font-size: .88rem;
 }
 
-/* Opcional: harmoniza com o foco dos inputs */
-.rf-file-btn:focus-visible{
+.rf-file-btn:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px color-mix(in oklab, var(--roxo) 24%, transparent);
 }

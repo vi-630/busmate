@@ -27,7 +27,6 @@
       <small class="rf-hint">PNG/JPG até 2&nbsp;MB • mínimo 256×256</small>
     </div>
 
-    <!-- IMPORTANTE: enctype para upload -->
     <form class="register-form" action="<?=URL?>/usuarios/cadastrar" method="post" autocomplete="on" enctype="multipart/form-data">
       <label class="rf-label" for="nome">Nome completo:</label>
       <input class="rf-input" type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -109,7 +108,6 @@
   const senha = document.getElementById('senha');
   const tel   = document.getElementById('telefone');
 
-  // --- Validação de e-mail (mensagem amigável) ---
   if (email) {
     email.addEventListener('invalid', () => {
       if (email.validity.valueMissing) {
@@ -123,7 +121,6 @@
     email.addEventListener('input', () => email.setCustomValidity(''));
   }
 
-  // --- Validação de senha (4 a 8 caracteres) ---
   if (senha) {
     const senhaMsg = 'A senha deve ter entre 4 e 8 caracteres.';
     senha.addEventListener('input', () => {
@@ -139,12 +136,10 @@
     });
   }
 
-  // --- Máscara e validação de telefone ---
   if (tel) {
     const pat = /^\(\d{2}\)\s(?:9\d{4}-\d{4}|\d{4}-\d{4})$/;
 
     function formatPhone(val) {
-      // mantém só dígitos e limita a 11
       const nums = val.replace(/\D/g, '').slice(0, 11);
       const ddd = nums.slice(0, 2);
       const rest = nums.slice(2);
@@ -181,7 +176,6 @@
 
       tel.value = formatPhone(tel.value);
 
-      // tenta manter o cursor em posição natural
       const newLen = tel.value.length;
       const diff = newLen - oldLen;
       tel.setSelectionRange(cursorPos + diff, cursorPos + diff);

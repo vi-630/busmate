@@ -4,24 +4,22 @@
   box-sizing: border-box; 
 }
 
-html, body{ 
+html, body { 
   height: 100%; 
 }
 
-body{ 
+body { 
   margin: 0; 
   font-family: 'Poppins', sans-serif; 
 }
 
-/* aliases locais (vem do tokens.css) */
-:root{
+:root {
   --purple: var(--bm-purple);
   --purple-dark: var(--bm-purple-700);
   --yellow: var(--bm-yellow);
   --white: var(--bm-white);
 }
 
-/* ===== Header STICKY sem gap ===== */
 .bg-dark{
   background: var(--purple);
   position: sticky; 
@@ -31,121 +29,115 @@ body{
   z-index: 9999;
 }
 
-/* mata o “vão” (colapso de margem) do primeiro bloco após o header */
-header.bg-dark + *{ 
+header.bg-dark + * { 
   margin-top: 0 !important; 
   border-top: 1px solid transparent; 
 }
 
-/* container full-width (você usa esse nome em vários lugares) */
-.container{ 
+.container { 
   max-width: 100%; 
   margin: 0; 
   padding: 0; 
 }
 
-/* navbar base */
-.navbar{
-  display:flex; 
-  align-items:center; 
-  justify-content:space-between;
-  gap:12px; 
-  min-height:70px; 
-  padding:12px 20px;
+.navbar {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  gap: 12px; 
+  min-height: 70px; 
+  padding: 12px 20px;
   color: var(--white);
 }
 
-.navbar > img{
-  width:auto !important; 
-  height:auto !important;
-  max-height:34px; 
-  margin-left: 10vh; /* como você tinha no desktop */
+.navbar > img {
+  width: auto !important; 
+  height: auto !important;
+  max-height: 34px; 
+  margin-left: 10vh;
 }
 
-/* menu */
-.navbar-collapse{ 
-  flex:1; 
-  display:flex; 
-  justify-content:flex-end; 
+.navbar-collapse { 
+  flex: 1; 
+  display: flex; 
+  justify-content: flex-end; 
 }
 
-.navbar-nav{
-  display:flex; 
-  align-items:center; 
-  gap:28px; 
-  list-style:none; 
-  margin:0; 
-  padding:0;
+.navbar-nav {
+  display: flex; 
+  align-items: center; 
+  gap: 28px; 
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
 }
 
-.nav-link{
+.nav-link {
   color: var(--yellow);
   margin-right: 10vh; 
-  margin-left: -10vh; /* seu espaçamento no desktop */
-  text-decoration:none; 
-  font-size:20px; 
-  padding:10px 20px; 
-  border-radius:20px;
+  margin-left: -10vh;
+  text-decoration: none; 
+  font-size: 20px; 
+  padding: 10px 20px; 
+  border-radius: 20px;
   transition: color .2s ease, background .2s ease, transform .1s ease;
 }
 
-.nav-link:hover, .nav-link:focus-visible{
+.nav-link:hover, .nav-link:focus-visible {
   color: var(--white); 
   background: rgba(255,255,255,.10); 
   outline: none;
 }
 
-.nav-link:active{ 
+.nav-link:active { 
   transform: translateY(1px); 
 }
 
-.navbar-toggler{ 
-  display:none !important; 
+.navbar-toggler { 
+  display: none !important; 
 }
 
-/* ===== Ajustes responsivos ===== */
-@media (max-width: 992px){
-  .navbar{ 
-    padding:10px 14px; 
-    min-height:64px; 
+@media (max-width: 992px) {
+  .navbar { 
+    padding: 10px 14px; 
+    min-height: 64px; 
   }
-  .navbar > img{ 
-    max-height:30px; 
+  .navbar > img { 
+    max-height: 30px; 
     margin-left: 0; 
   }
-  .navbar-nav{ 
-    gap:18px; 
+  .navbar-nav { 
+    gap: 18px; 
   }
 }
 
-/* Mobile: IMAGEM 3 (logo 1ª linha, menu 2ª) */
-@media (max-width: 900px){
-  .navbar{
+@media (max-width: 900px) {
+  .navbar {
     display: grid;
-    grid-template-areas:
-      "logo"
+    grid-template-areas: 
+      "logo" 
       "menu";
     row-gap: 8px;
     padding: 10px 12px;
   }
-  .navbar > img{
+  .navbar > img {
     grid-area: logo; 
     justify-self: center; 
     align-self: center; 
     margin: 0;
   }
-  .navbar-collapse{
+  .navbar-collapse {
     grid-area: menu; 
     flex: 0 0 100%;
     display: flex; 
     justify-content: center !important;
   }
-  .navbar-nav{
+  .navbar-nav {
     flex-wrap: wrap; 
     justify-content: center; 
     gap: 16px;
   }
-  .nav-link{ 
+  .nav-link { 
     margin: 0; 
     padding: 8px 12px; 
     border-radius: 12px; 
@@ -153,16 +145,15 @@ header.bg-dark + *{
   }
 }
 
-/* super-estreito */
-@media (max-width: 420px){
-  .navbar{ 
+@media (max-width: 420px) {
+  .navbar { 
     padding: 8px 10px; 
   }
-  .navbar-nav{ 
+  .navbar-nav { 
     gap: 12px; 
   }
-  .nav-link{ 
-    font-weight:600; 
+  .nav-link { 
+    font-weight: 600; 
     padding: 6px 8px; 
     font-size: 17px; 
   }

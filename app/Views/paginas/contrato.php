@@ -5,7 +5,6 @@
 </head>
 
 <section class="app-layout">
-  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="profile">
       <div class="avatar"><i class="bi bi-person-fill"></i></div>
@@ -25,14 +24,12 @@
     </nav>
   </aside>
 
-  <!-- Conteúdo -->
   <main class="content">
     <header class="page-head">
       <h1>Contrato</h1>
     </header>
 
     <section class="contract-card">
-      <!-- Linha do topo -->
       <div class="top-actions">
         <a class="btn btn-outline" href="<?=URL?>/public/docs/Contrato.pdf" target="_blank">
           <i class="bi bi-file-earmark-text"></i> Visualizar contrato
@@ -43,23 +40,19 @@
         </a>
       </div>
 
-      <!-- Formulário único -->
       <form class="upload-form" action="<?=URL?>/contratos/enviarTudo" method="post" enctype="multipart/form-data">
-        <!-- Anexar documentos -->
         <label class="file-field">
           <i class="bi bi-upload"></i>
           <span id="docsLabel">Anexar Documentos</span>
           <input type="file" name="documentos[]" id="docsInput" multiple accept=".pdf,.jpg,.jpeg,.png">
         </label>
 
-        <!-- Anexar contrato assinado -->
         <label class="file-field">
           <i class="bi bi-upload"></i>
           <span id="fileLabel">Anexar Contrato Assinado</span>
           <input type="file" name="contrato_assinado" accept=".pdf,.jpg,.jpeg,.png" id="fileInput">
         </label>
 
-        <!-- Botão único roxo -->
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
     </section>

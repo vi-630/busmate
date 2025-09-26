@@ -1,4 +1,4 @@
-:root{
+:root {
   --purple: #390b94;
   --purple-dark: var(--bm-purple-700);
   --gold: var(--bm-yellow);
@@ -11,7 +11,8 @@
   --maxw: 1120px;
   --header-h: 70px;
 }
-.app-layout{
+
+.app-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 28px;
@@ -19,7 +20,8 @@
   background: var(--lavender);
   box-sizing: border-box;
 }
-.sidebar{
+
+.sidebar {
   background: var(--sidebar-yellow);
   border-right: 4px solid rgba(0,0,0,.07);
   border-radius: 0 20px 20px 0;
@@ -29,31 +31,38 @@
   height: auto;   
   margin: 0;
 }
-.profile{
+
+.profile {
   display: grid;
   place-items: center;
   row-gap: 10px;
   margin-bottom: 18px;
 }
-.avatar{
-  width: 90px; height: 90px;
+
+.avatar {
+  width: 90px; 
+  height: 90px;
   border-radius: 50%;
   background: #f8e4a8;
-  display: grid; place-items: center;
+  display: grid; 
+  place-items: center;
   font-size: 42px;
   color: var(--purple);
   border: 3px solid rgba(0,0,0,.08);
 }
-.user-name{
+
+.user-name {
   color: #3a2c00;
   font-weight: 700;
 }
-.menu{ 
+
+.menu { 
   display: grid; 
   gap: 8px; 
   margin-top: 6px; 
 }
-.menu .item{
+
+.menu .item {
   display: grid;
   grid-template-columns: 26px 1fr;
   align-items: center;
@@ -65,53 +74,71 @@
   font-weight: 600;
   transition: background .2s ease, transform .06s ease;
 }
-.menu .item i{ font-size: 18px; }
-.menu .item:hover{ background: rgba(0,0,0,.06); }
-.menu .item:active{ transform: translateY(1px); }
-.menu .item.active{
+
+.menu .item i { 
+  font-size: 18px; 
+}
+
+.menu .item:hover { 
+  background: rgba(0,0,0,.06); 
+}
+
+.menu .item:active { 
+  transform: translateY(1px); 
+}
+
+.menu .item.active {
   background: rgba(255,255,255,.55);
   outline: 2px solid rgba(255,255,255,.7);
 }
-.content{
+
+.content {
   min-width: 0;
   max-width: var(--maxw);
   margin: 0;       
   padding-bottom: 0;
 }
-.page-head h1{
+
+.page-head h1 {
   margin: 6px 10vh 18px 10vh;
   color: var(--purple);
   font-size: clamp(24px, 3.6vw, 40px);
   font-weight: 800;
 }
-.avisos h2{
+
+.avisos h2 {
   color: #2a1767;
   font-size: clamp(18px, 2.5vw, 24px);
   margin: 0 0 10px 10vh;
   font-weight: 800;
 }
-.avisos .box{
+
+.avisos .box {
   margin: 0vh 10vh 10vh 10vh;
   background: var(--white);
   border: 2px solid color-mix(in oklab, var(--purple) 38%, white);
   border-radius: 14px;
   min-height: 80px;
-  display: grid; place-items: center;
+  display: grid; 
+  place-items: center;
   color: var(--purple-dark);
   padding: 10px 14px;
 }
-.horarios h2{
+
+.horarios h2 {
   color: #2a1767;
   font-size: clamp(18px, 2.5vw, 24px);
   margin: 20px 0 10px 10vh;
   font-weight: 800;
 }
-.cards-2col{
+
+.cards-2col {
   display: grid;
   grid-template-columns: 1fr;
   gap: 22px;
 }
-.bus-card{
+
+.bus-card {
   background: var(--white);
   border-radius: 18px;
   box-shadow: var(--shadow);
@@ -119,66 +146,87 @@
   border: 2px solid color-mix(in oklab, var(--purple) 38%, white);
   margin: 0vh 10vh 10vh 10vh;
 }
-.bus-card h3{
+
+.bus-card h3 {
   margin: 2px 0 8px 0;
   text-align: center;
   color: var(--purple-dark);
   font-size: 18px;
   font-weight: 800;
 }
-.bus-card h3 a,
-.bus-card h3 a:visited{
+
+.bus-card h3 a,.bus-card h3 a:visited {
   color: var(--purple-dark);
   text-decoration: none;
 }
-.bus-card h3 a:hover{
+
+.bus-card h3 a:hover {
   color: var(--purple);
-  text-decoration: underline; /* opcional */
+  text-decoration: underline;
 }
-.bus-card img{
+
+.bus-card img {
   width: 90%;
   height: auto;
   display: block;
 }
-.card-link{
+
+.card-link {
   display: block;
   text-decoration: none;
   color: inherit;
   text-align: center;
   cursor: pointer;
 }
-@media (max-width: 760px){
-  .app-layout{
+
+@media (max-width: 760px) {
+  .app-layout {
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 0; 
   }
-  .sidebar{
+  .sidebar {
     position: relative;
     top: 0;
     border-radius: 14px;
   }
-  .menu{
+  .menu {
     grid-template-columns: repeat(3, 1fr);
   }
-  .menu .item{
+  .menu .item {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
     padding: 10px 8px;
   }
-  .menu .item span{ font-size: 14px; }
+  .menu .item span { 
+    font-size: 14px; 
+  }
 }
 
-/* em index_app.css, contrato.css, perfil.css etc. */
-.sidebar{ top: var(--header-h); }
+.sidebar { 
+  top: var(--header-h); 
+}
 
-/* === Patch: alinhar sidebar ao header sticky e mobile melhor === */
-@media (min-width: 901px){
-  .sidebar{ top: 70px; }
+@media (min-width: 901px) {
+  .sidebar { 
+    top: 70px; 
+  }
 }
-@media (max-width: 760px){
-  .app-layout{ grid-template-columns: 1fr; gap: 16px; padding: 0; }
-  .sidebar{ position: relative; top: 0; border-radius: 14px; }
+
+@media (max-width: 760px) {
+  .app-layout { 
+    grid-template-columns: 1fr; 
+    gap: 16px; 
+    padding: 0; 
+  }
+  .sidebar { 
+    position: relative; 
+    top: 0; 
+    border-radius: 14px; 
+  }
 }
-.content{ min-width: 0; } /* evita transbordo de textos/ícones */
+
+.content { 
+  min-width: 0; 
+}

@@ -1,17 +1,17 @@
-:root{
+:root {
   --roxo:var(--bm-purple); 
   --amarelo:var(--bm-yellow); 
   --branco:var(--bm-white);
 }
 
-.site-footer{
+.site-footer {
   background: var(--roxo);
   padding: 40px 0 0;
   font-family: 'Poppins', sans-serif;
   color: var(--branco);
 }
 
-.footer-container{
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -21,53 +21,53 @@
   gap: 30px;
 }
 
-.footer-col h4{
+.footer-col h4 {
   margin-bottom: 14px;
   font-size: 1rem;
   font-weight: 700;
   color: var(--amarelo);
 }
 
-.footer-col ul{ 
+.footer-col ul { 
   list-style: none; 
   margin: 0; 
   padding: 0; 
 }
 
-.footer-col ul li{ 
+.footer-col ul li { 
   margin-bottom: 8px; 
 }
 
-.footer-col ul li a{
+.footer-col ul li a {
   color: var(--branco);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s;
 }
 
-.footer-col ul li a:hover{ 
+.footer-col ul li a:hover { 
   color: var(--amarelo); 
 }
 
-.footer-col.brand img{ 
+.footer-col.brand img { 
   height: 40px; 
   margin-bottom: 5px; 
 }
 
-.footer-col.brand .slogan{ 
+.footer-col.brand .slogan { 
   font-size: 1.2rem; 
   font-weight: 600; 
   color: var(--branco); 
 }
 
-.social-links a{
+.social-links a {
   display: inline-block;
   margin-right: 10px;
   color: var(--branco);
   transition: transform 0.2s, color 0.2s;
 }
 
-.social-links a:hover{ 
+.social-links a:hover { 
   color: var(--amarelo); 
   transform: scale(1.1); 
 }
@@ -87,13 +87,13 @@
   font-weight: 600;
 }
 
-@media (max-width: 768px){
-  .footer-container{ 
+@media (max-width: 768px) {
+  .footer-container { 
     flex-direction: column; 
     align-items: center; 
     text-align: center; 
   }
-  .footer-col{ 
+  .footer-col { 
     width: 100%; 
   }
 }

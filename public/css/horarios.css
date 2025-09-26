@@ -1,4 +1,4 @@
-:root{
+:root {
   --roxo: var(--bm-purple);
   --roxo-vivo: #390b94;
   --roxo-claro: var(--bm-bg);
@@ -8,14 +8,14 @@
   --border: color-mix(in oklab, var(--roxo) 32%, white);
 }
 
-.manha-content{
+.manha-content {
   background: var(--roxo-claro);
   padding: 24px 10vh 40px 10vh;
   min-height: calc(100vh - 70px);
   box-sizing: border-box;
 }
 
-.page-head h1{
+.page-head h1 {
   text-align: center;
   margin-bottom: 18px;
   color: var(--roxo-vivo);
@@ -23,8 +23,11 @@
   font-weight: 800;
 }
 
-.bus-hero{ margin: 0 0 20px 0; }
-.bus-photo{
+.bus-hero { 
+  margin: 0 0 20px 0; 
+}
+
+.bus-photo {
   display: block;
   width: 100%;
   max-width: 760px;
@@ -33,7 +36,7 @@
   border: 2px solid var(--border);
 }
 
-.info-card{
+.info-card {
   background: var(--branco);
   border-radius: 14px;
   border: 2px solid var(--border);
@@ -43,28 +46,44 @@
   margin: 0 auto;
 }
 
-.info-card .motorista{
+.info-card .motorista {
   margin: 0 0 10px 0;
   color: var(--preto);
   font-size: 16px;
 }
-.info-card .motorista strong{ color: var(--roxo-vivo); }
 
-.horarios-ponto h2{
+.info-card .motorista strong { 
+  color: var(--roxo-vivo); 
+}
+
+.horarios-ponto h2 {
   margin: 4px 0 8px 0;
   color: var(--roxo-vivo);
   font-size: 18px;
   font-weight: 800;
 }
-.horarios-ponto ul{ list-style: none; padding: 0; margin: 0; }
-.horarios-ponto li{
+
+.horarios-ponto ul { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.horarios-ponto li {
   margin: 4px 0;
   font-size: 15px;
   color: var(--preto);
 }
-.horarios-ponto li strong{ color: var(--roxo); }
 
-@media (max-width: 760px){
-  .manha-content{ padding: 16px; }
-  .bus-photo{ max-width: 100%; }
+.horarios-ponto li strong { 
+  color: var(--roxo); 
+}
+
+@media (max-width: 760px) {
+  .manha-content { 
+    padding: 16px; 
+  }
+  .bus-photo { 
+    max-width: 100%; 
+  }
 }

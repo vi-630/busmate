@@ -5,7 +5,6 @@
 </head>
 
 <section class="app-layout">
-  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="profile">
       <div class="avatar"><i class="bi bi-person-fill"></i></div>
@@ -25,13 +24,11 @@
     </nav>
   </aside>
 
-  <!-- Conteúdo principal -->
   <main class="content forum-content">
     <header class="page-head">
       <h1>Fórum</h1>
     </header>
 
-    <!-- Barra de ações -->
     <div class="forum-actions">
       <label class="search">
         <i class="bi bi-search"></i>
@@ -42,7 +39,6 @@
       </button>
     </div>
 
-    <!-- Composer de Novo Tópico -->
     <form id="composerTopico" class="topic-card composer" action="<?=URL?>/forum/criar" method="post" hidden>
       <header class="topic-head">
         <input class="composer-title" type="text" name="titulo" placeholder="Título do tópico" required>
@@ -54,10 +50,8 @@
       </footer>
     </form>
 
-    <!-- Lista de tópicos -->
     <section class="topics" id="topicsList">
 
-      <!-- Card de tópico -->
       <article class="topic-card" data-topic-id="1">
         <header class="topic-head">
           <h3><a href="#">Título do Tópico</a></h3>
@@ -73,7 +67,6 @@
           <button type="button" class="link-count" data-replies-toggle>2 Respostas</button>
         </footer>
 
-        <!-- Composer de resposta -->
         <form class="reply-composer" action="<?=URL?>/forum/responder/1" method="post" hidden>
           <textarea name="resposta" placeholder="Escreva sua resposta..." rows="4" required></textarea>
           <div class="composer-actions">
@@ -82,7 +75,6 @@
           </div>
         </form>
 
-        <!-- Respostas (ocultas por padrão) -->
         <div class="replies" hidden>
           <article class="reply">
             <header class="reply-head">
@@ -99,7 +91,6 @@
         </div>
       </article>
 
-      <!-- Outro tópico -->
       <article class="topic-card" data-topic-id="2">
         <header class="topic-head">
           <h3><a href="#">Outro Tópico</a></h3>
@@ -115,7 +106,6 @@
           <button type="button" class="link-count" data-replies-toggle>0 Respostas</button>
         </footer>
 
-        <!-- Composer de resposta -->
         <form class="reply-composer" action="<?=URL?>/forum/responder/2" method="post" hidden>
           <textarea name="resposta" placeholder="Escreva sua resposta..." rows="4" required></textarea>
           <div class="composer-actions">
@@ -124,7 +114,6 @@
           </div>
         </form>
 
-        <!-- Respostas (vazio por enquanto) -->
         <div class="replies" hidden></div>
       </article>
 
@@ -132,12 +121,10 @@
   </main>
 </section>
 
-<!-- Script -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const $ = (sel, root=document) => root.querySelector(sel);
 
-  // Novo tópico
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-action="toggle-new"]');
     if (!btn) return;
@@ -149,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Responder
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-reply-toggle]');
     if (!btn) return;
@@ -162,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Mostrar/ocultar respostas
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-replies-toggle]');
     if (!btn) return;
@@ -172,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     box.toggleAttribute('hidden');
   });
 
-  // Cancelar (fecha composers)
   document.addEventListener('click', (e) => {
     const closer = e.target.closest('[data-close]');
     if (!closer) return;

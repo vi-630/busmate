@@ -30,7 +30,6 @@
     </header>
 
     <section class="perfil-grid">
-      <!-- FORM EDITÁVEL + FOTO (com upload) -->
       <form class="dados-form" id="perfilForm"
             action="<?=URL?>/usuarios/atualizar"
             method="post" enctype="multipart/form-data" novalidate>
@@ -68,21 +67,17 @@
           <p><strong>Situação:</strong> <?= htmlspecialchars($usuario['situacao_mensalidade'] ?? '—') ?></p>
         </div>
 
-        <!-- Ações do formulário -->
         <div class="form-actions">
           <button type="button" id="btnCancelar" class="btn btn-outline" hidden>Cancelar</button>
           <button type="submit" id="btnSalvar" class="btn btn-primary" hidden>Salvar</button>
         </div>
 
-        <!-- Botão CONTRATO (esconde no modo edição) -->
         <a id="btnContrato" href="<?=URL?>/paginas/contrato" class="btn btn-secondary">CONTRATO</a>
       </form>
 
-      <!-- Coluna direita: FOTO com upload + Editar -->
       <section class="foto-wrap">
   <div class="foto">
     <div class="avatar-lg">
-      <!-- Ícone fixo -->
       <i class="bi bi-person-circle"></i>
     </div>
 
@@ -102,14 +97,12 @@
   const btnCancelar = document.getElementById('btnCancelar');
   const btnContrato = document.getElementById('btnContrato');
 
-  // Foto
   const btnTrocarFoto = document.getElementById('btnTrocarFoto');
   const fotoInput     = document.getElementById('fotoInput');
   const fotoPreview   = document.getElementById('fotoPreview');
   const fotoIcon      = document.getElementById('fotoIcon');
   const fotoHint      = document.getElementById('fotoHint');
 
-  // Guarda a foto original (se houver)
   const originalPhoto = fotoPreview && fotoPreview.src ? fotoPreview.src : '';
 
   function setEditing(isEditing){
@@ -121,10 +114,8 @@
     btnCancelar.hidden = !isEditing;
     btnEditar.hidden   =  isEditing;
 
-    // Esconde o botão CONTRATO quando está editando
     if (btnContrato) btnContrato.hidden = isEditing;
 
-    // Mostra controles de foto apenas ao editar
     if (btnTrocarFoto) btnTrocarFoto.hidden = !isEditing;
     if (fotoHint)      fotoHint.hidden      = !isEditing;
   }
@@ -135,16 +126,13 @@
         el.value = el.getAttribute('data-original');
       }
     });
-    // Restaura a foto original
     if (originalPhoto) {
-      // existia foto antes
       if (fotoPreview){
         fotoPreview.src = originalPhoto;
         fotoPreview.style.display = 'block';
       }
       if (fotoIcon) fotoIcon.style.display = 'none';
     } else {
-      // não existia foto antes
       if (fotoPreview){
         fotoPreview.src = '';
         fotoPreview.style.display = 'none';
@@ -154,16 +142,12 @@
     if (fotoInput) fotoInput.value = '';
   }
 
-  // Inicia em modo visualização
   setEditing(false);
 
-  // Alterna para edição
   btnEditar.addEventListener('click', () => setEditing(true));
 
-  // Cancelar: restaura tudo
   btnCancelar.addEventListener('click', () => { restoreOriginals(); setEditing(false); });
 
-  // Valida/preview da foto
   if (btnTrocarFoto && fotoInput) {
     btnTrocarFoto.addEventListener('click', () => fotoInput.click());
 
@@ -187,7 +171,6 @@
     });
   }
 
-  // Validação simples antes de enviar (opcional)
   form.addEventListener('submit', (e) => {
     const changedFields = Array.from(inputs).some(el => el.value !== el.getAttribute('data-original'));
     const changedPhoto  = fotoInput && fotoInput.files && fotoInput.files.length > 0;

@@ -1,6 +1,6 @@
 .login-section {
   --roxo: var(--bm-purple);
-  --roxo-escuro: #390b94;    /* títulos */
+  --roxo-escuro: #390b94; 
   --fundo: var(--bm-bg);
   --texto: var(--bm-ink);
   --amarelo: var(--bm-yellow);
@@ -161,7 +161,6 @@
   transform: translateY(1px); 
 }
 
-/* Ilustração */
 .login-section .login-illustration { 
   display: grid; 
   place-items: center; 
@@ -173,7 +172,6 @@
   height: auto;
 }
 
-/* Responsividade */
 @media (max-width: 992px) {
   .login-section .login-wrap { 
     grid-template-columns: 1fr; 

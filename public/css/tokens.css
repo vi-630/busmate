@@ -1,13 +1,11 @@
 :root{
-  /* === Paleta oficial === */
-  --bm-purple: #5a1eaf;      /* roxo base */
-  --bm-purple-700: #390b94;  /* roxo vivido (títulos) */
-  --bm-yellow: #f6c12d;      /* amarelo */
-  --bm-ink: #000000;         /* texto */
-  --bm-bg: #f0ebf8;          /* fundo */
+  --bm-purple: #5a1eaf;      
+  --bm-purple-700: #390b94;  
+  --bm-yellow: #f6c12d;   
+  --bm-ink: #000000;       
+  --bm-bg: #f0ebf8;          
   --bm-white: #ffffff;
 
-  /* === Radius === */
   --radius-xs: 8px;
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -15,12 +13,10 @@
   --radius-xl: 24px;
   --radius-2xl: 32px;
 
-  /* === Sombras === */
   --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
   --shadow-md: 0 8px 18px rgba(0,0,0,.10);
   --shadow-lg: 0 16px 32px rgba(0,0,0,.12);
 
-  /* === Bordas e focus === */
   --border-subtle: 1px solid color-mix(in oklab, var(--bm-purple) 18%, white);
   --focus-ring: 0 0 0 4px color-mix(in oklab, var(--bm-purple) 24%, white);
 }
