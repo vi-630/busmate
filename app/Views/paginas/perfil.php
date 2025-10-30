@@ -7,7 +7,29 @@
 <section class="app-layout">
   <aside class="sidebar">
     <div class="profile">
-      <div class="avatar"><i class="bi bi-person-fill"></i></div>
+      <?php
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        $userPhoto = null;
+        if (!empty($_SESSION['user_id'])) {
+          require_once dirname(__DIR__,2) . '/Libraries/Database.php';
+          try {
+            $db = new Database();
+            $db->query('SELECT usua_foto FROM usuario WHERE usua_id = :id LIMIT 1');
+            $db->bind(':id', $_SESSION['user_id']);
+            $r = $db->resultado();
+            if ($r && !empty($r->usua_foto)) $userPhoto = $r->usua_foto;
+          } catch (Throwable $t) {
+            $userPhoto = null;
+          }
+        }
+      ?>
+      <div class="avatar">
+        <?php if ($userPhoto): ?>
+          <img src="<?= URL ?>/<?= htmlspecialchars($userPhoto) ?>" alt="Avatar" />
+        <?php else: ?>
+          <i class="bi bi-person-fill"></i>
+        <?php endif; ?>
+      </div>
       <strong class="user-name"><?= htmlspecialchars($usuario['nome'] ?? 'Fulano') ?></strong>
     </div>
 
@@ -78,10 +100,19 @@
       <section class="foto-wrap">
   <div class="foto">
     <div class="avatar-lg">
-      <i class="bi bi-person-circle"></i>
+      <?php if (!empty($usuario['foto'])): ?>
+        <img id="fotoPreview" src="<?= URL ?>/<?= htmlspecialchars($usuario['foto']) ?>" alt="Foto do usuário" />
+        <i id="fotoIcon" class="bi bi-person-circle" style="display:none"></i>
+      <?php else: ?>
+        <img id="fotoPreview" style="display:none" alt="Foto do usuário" />
+        <i id="fotoIcon" class="bi bi-person-circle"></i>
+      <?php endif; ?>
     </div>
 
+    <input type="file" id="fotoInput" name="foto" accept="image/*" hidden>
+    <button type="button" id="btnTrocarFoto" class="btn btn-outline" hidden>Trocar Foto</button>
     <button type="button" id="btnEditar" class="btn btn-outline">Editar Perfil</button>
+    <small id="fotoHint" class="hint" hidden>PNG/JPG até 10 MB</small>
   </div>
 </section>
     </section>
@@ -153,11 +184,11 @@
 
     fotoInput.addEventListener('change', () => {
       const f = fotoInput.files && fotoInput.files[0];
-      if(!f) return;
+  if(!f) return;
 
-      const okType = /image\/(png|jpeg|jpg|webp)/i.test(f.type);
-      if(!okType){ alert('Envie uma imagem PNG, JPG ou WEBP.'); fotoInput.value=''; return; }
-      if(f.size > 2 * 1024 * 1024){ alert('Tamanho máximo: 2 MB.'); fotoInput.value=''; return; }
+  const okType = /image\/(png|jpeg|jpg|webp)/i.test(f.type);
+  if(!okType){ alert('Envie uma imagem PNG, JPG ou WEBP.'); fotoInput.value=''; return; }
+  if(f.size > 10 * 1024 * 1024){ alert('Tamanho máximo: 10 MB.'); fotoInput.value=''; return; }
 
       const reader = new FileReader();
       reader.onload = e => {

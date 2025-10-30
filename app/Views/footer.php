@@ -10,11 +10,17 @@
 
     <div class="footer-col">
       <h4>Links Rápidos</h4>
+      <?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
+      <?php $inicioHref = !empty($_SESSION['user_id']) ? URL . '/paginas/index_app' : URL; ?>
       <ul>
-        <li><a href="<?=URL?>">Início</a></li>
+        <li><a href="<?= $inicioHref ?>">Início</a></li>
         <li><a href="<?=URL?>/paginas/sobre">Sobre Nós</a></li>
         <li><a href="<?=URL?>/paginas/contato">Contato</a></li>
-        <li><a href="<?=URL?>/paginas/entrar">Entrar</a></li>
+        <?php if (!empty($_SESSION['user_id'])): ?>
+          <li><a class="logout-link" href="<?=URL?>/usuarios/logout">Sair</a></li>
+        <?php else: ?>
+          <li><a href="<?=URL?>/paginas/entrar">Entrar</a></li>
+        <?php endif; ?>
       </ul>
     </div>
 

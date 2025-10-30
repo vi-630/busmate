@@ -7,7 +7,29 @@
 <section class="app-layout">
   <aside class="sidebar">
     <div class="profile">
-      <div class="avatar"><i class="bi bi-person-fill"></i></div>
+      <?php
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        $userPhoto = null;
+        if (!empty($_SESSION['user_id'])) {
+          require_once dirname(__DIR__,2) . '/Libraries/Database.php';
+          try {
+            $db = new Database();
+            $db->query('SELECT usua_foto FROM usuario WHERE usua_id = :id LIMIT 1');
+            $db->bind(':id', $_SESSION['user_id']);
+            $r = $db->resultado();
+            if ($r && !empty($r->usua_foto)) $userPhoto = $r->usua_foto;
+          } catch (Throwable $t) {
+            $userPhoto = null;
+          }
+        }
+      ?>
+      <div class="avatar">
+        <?php if ($userPhoto): ?>
+          <img src="<?= URL ?>/<?= htmlspecialchars($userPhoto) ?>" alt="Avatar" />
+        <?php else: ?>
+          <i class="bi bi-person-fill"></i>
+        <?php endif; ?>
+      </div>
       <strong class="user-name"><?= htmlspecialchars($usuario['nome'] ?? 'Fulano') ?></strong>
     </div>
 

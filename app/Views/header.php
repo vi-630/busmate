@@ -13,7 +13,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=URL?>" data-tooltip="tooltip" title="Página Inicial">Home</a>
+                        <?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
+                        <?php $homeUrl = isset($_SESSION['user_id']) ? URL . '/paginas/index_app' : URL; ?>
+                        <a class="nav-link" href="<?= $homeUrl ?>" data-tooltip="tooltip" title="Página Inicial">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?=URL?>/paginas/sobre" data-tooltip="tooltip" title="Sobre nós">Sobre nós</a>
@@ -21,9 +23,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?=URL?>/paginas/contato" data-tooltip="tooltip" title="Contato">Contato</a>
                     </li>
+                    <?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=URL?>/usuarios/logout" data-tooltip="tooltip" title="Sair">Sair</a>
+                    </li>
+                    <?php else: ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?=URL?>/paginas/entrar" data-tooltip="tooltip" title="Entrar">Entrar</a>
                     </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </nav>

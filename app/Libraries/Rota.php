@@ -37,5 +37,13 @@
             return $url;
            }//fim do if
         }//fim da função url
+
+        protected function registrarRotas() {
+            // Rotas para solicitações de alunos
+            $this->post('alunos/solicitar', 'Alunos@solicitar');
+            $this->get('paginas/escolher_empresa', 'Alunos@escolher_empresa');
+            $this->post('alunos/criar_solicitacao', 'Alunos@criar_solicitacao');
+            $this->get('paginas/solicitacao_status', 'Alunos@status');
+        }
     }//fim da classe Rota
 ?>
