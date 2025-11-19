@@ -1,0 +1,25 @@
+[2025-10-28 20:44:00] ERRO:
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'empr_nome' in 'field list'
+[2025-10-29 00:03:22] ERRO:
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '12.365.478/0001-69' for key 'uq_empresa_cnpj'
+[2025-10-29 00:13:33] Upload error (foto admin): code 4
+[2025-10-29 01:07:00] ERRO:
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '12.365.478/0001-69' for key 'uq_empresa_cnpj'
+[2025-10-29 01:09:26] Aviso: empresa_usuario ausente? SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_busmate.empresa_usuario' doesn't exist
+[2025-10-29 01:11:06] Upload error (foto admin): code 4
+[2025-10-29 01:11:07] Aviso: empresa_usuario ausente? SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_busmate.empresa_usuario' doesn't exist
+[2025-10-29 05:28:24] Upload error (foto admin): code 4
+[2025-10-29 06:36:21] ERRO:
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+[2025-10-29 12:44:34] ERRO:
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+[2025-10-29 12:46:16] ERRO:
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+[2025-10-29 16:26:39] ERRO INSERT EMPRESA:
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_busmate`.`empresa`, CONSTRAINT `fk_empresa_criado_por` FOREIGN KEY (`empr_criado_por`) REFERENCES `usuario` (`usua_id`) ON DELETE SET NULL ON UPDATE CASCADE)
+[2025-11-19 00:39:37] ERRO INSERT EMPRESA:
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'empr_pix_url' cannot be null
+[2025-11-19 00:40:36] ERRO INSERT EMPRESA:
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'empr_pix_url' cannot be null
+[2025-11-19 00:41:13] ERRO INSERT EMPRESA:
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'empr_pix_url' cannot be null

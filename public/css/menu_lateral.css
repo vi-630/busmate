@@ -1,0 +1,171 @@
+:root {
+  --roxo: var(--bm-purple, #5a2dcc);
+  --roxo-700: var(--bm-purple-700, #4a20ab);
+  --lavender: var(--bm-bg, #f5f3ff);
+  --ink: var(--bm-ink, #1f1f1f);
+  --white: var(--bm-white, #fff);
+  --border: color-mix(in oklab, var(--roxo) 22%, white);
+  --shadow-sm: 0 6px 16px rgba(0,0,0,.08);
+  --radius-md: 14px;
+  --radius-sm: 10px;
+}
+
+/* ===== LAYOUT (Sidebar + Conteúdo) ===== */
+.app-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 80px);
+  background: var(--lavender);
+}
+
+.sidebar {
+  background: #fff;
+  border-right: 2px solid var(--border);
+  padding: 16px;
+  position: sticky;
+  top: 0;
+  height: 100%;
+}
+
+/* ===== PERFIL ===== */
+.profile {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  margin-bottom: 14px;
+}
+
+.avatar {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border: 4px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar i {
+  font-size: 44px;
+  color: color-mix(in oklab, var(--roxo) 60%, #777);
+}
+
+.user-name {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ===== MENU ===== */
+.menu {
+  display: grid;
+  gap: 6px;
+}
+
+.menu .item {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Hover */
+.menu .item:hover {
+  background: color-mix(in oklab, var(--roxo) 8%, #fff);
+}
+
+/* Item ativo */
+.menu .item.active {
+  color: var(--roxo);
+  background: color-mix(in oklab, var(--roxo) 12%, #fff);
+}
+
+/* ===== RESPONSIVO ===== */
+
+/* ===== MENU EM LINHA SOMENTE NO CELULAR ===== */
+
+@media (max-width: 980px) {
+  .app-layout {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+/* ===== MENU EM LINHA SOMENTE NO CELULAR ===== */
+@media (max-width: 760px) {
+
+  /* layout vira 1 coluna só (sidebar em cima, conteúdo embaixo) */
+  .app-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* sidebar vira faixa horizontal no topo */
+  .sidebar {
+    position: static;
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid var(--border);
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* menu em linha, centralizado */
+  .menu {
+    display: flex;              /* sobrescreve o grid padrão */
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;            /* se faltar espaço, quebra pra baixo */
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* cada item vira uma pill */
+  .menu .item {
+    display: inline-flex;       /* ícone + texto lado a lado */
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    width: auto;                /* não ocupar a linha toda */
+  }
+}
+
+/* ===== MENU COMPACTO (APENAS ÍCONES NO CELULAR) ===== */
+@media (max-width: 760px) {
+
+  /* deixa o item do menu menor */
+  .menu .item {
+    padding: 10px;
+    border-radius: 14px;
+    width: 48px;          /* largura fixa só pro ícone */
+    height: 48px;
+    justify-content: center;
+    grid-template-columns: 1fr !important; 
+  }
+
+  /* Ícone centralizado */
+  .menu .item i {
+    font-size: 22px;
+  }
+
+  /* Some com o texto */
+  .menu .item span {
+    display: none;        /* texto some */
+  }
+
+}

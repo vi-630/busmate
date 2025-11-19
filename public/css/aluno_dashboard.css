@@ -1,0 +1,96 @@
+:root{
+  --roxo: var(--bm-purple, #5a1eaf);
+  --roxo-700: var(--bm-purple-700, #4a20ab);
+  --amarelo: var(--bm-yellow, #f6c12d);
+  --lavender: var(--bm-bg, #f4f1ff);
+  --ink: var(--bm-ink, #1f1f1f);
+  --white: var(--bm-white, #fff);
+  --border: color-mix(in oklab, var(--roxo) 18%, white);
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 18px 40px rgba(0,0,0,.12);
+  --shadow-md: 0 10px 24px rgba(0,0,0,.10);
+  --shadow-sm: 0 6px 16px rgba(0,0,0,.08);
+}
+
+.aluno-wrap{
+  position:relative;
+  background: var(--lavender);
+  padding: clamp(24px,5vw,48px) 16px;
+}
+.aluno-hero{
+  position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(1100px 420px at 85% 30%, color-mix(in oklab, var(--roxo) 10%, transparent), transparent 60%),
+    radial-gradient(800px 360px at 10% 70%, color-mix(in oklab, var(--amarelo) 16%, transparent), transparent 60%);
+}
+.aluno-container{ position:relative; z-index:1; max-width:1080px; margin:0 auto; }
+
+.aluno-head{
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px; margin-bottom:16px;
+}
+.aluno-head .title{ margin:0; text-align:center; color:var(--roxo); font-weight:900; font-size: clamp(24px,2.2vw,32px); }
+.btn-text{ color:var(--roxo); text-decoration:none; font-weight:800; display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center; }
+.btn-text:hover{ text-decoration:underline; color:var(--roxo-700); }
+
+.empresa-card{
+  display:grid; grid-template-columns:120px 1fr; gap:16px;
+  background:#fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);
+  padding: clamp(18px,2.6vw,26px); margin-bottom:16px;
+}
+.logo{ width:120px; height:120px; border-radius:20px; border:4px solid var(--border); display:grid; place-items:center; overflow:hidden; background:#fff; }
+.logo img{ width:100%; height:100%; object-fit:cover; }
+.logo.no-logo i{ font-size:50px; color: color-mix(in oklab, var(--roxo) 55%, #777); }
+.empresa-card .info h2{ margin:0 0 4px 0; font-size: clamp(20px,2vw,26px); color:var(--ink); font-weight:900; }
+.muted{ color:#6a6a6a; font-size:.95rem; }
+
+.grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:16px;
+}
+.card{
+  background:#fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);
+  padding: clamp(16px,2.6vw,22px);
+}
+.card-head h3{ margin:0 0 8px; color:var(--roxo); font-weight:900; font-size: clamp(18px,1.8vw,22px); display:grid; grid-auto-flow:column; gap:8px; align-items:center; }
+
+.empty{ border:2px dashed var(--border); border-radius: var(--radius-lg); padding:22px; text-align:center; color:#6a6a6a; display:grid; gap:6px; place-items:center; }
+.empty i{ font-size:34px; color: color-mix(in oklab, var(--roxo) 55%, #777); }
+
+.avisos-list{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+.aviso-item{ display:grid; grid-template-columns:80px 1fr; gap:12px; border:2px solid var(--border); border-radius: var(--radius-lg); padding:12px; }
+.av-when{ font-weight:800; color:var(--roxo); display:grid; place-items:center; }
+.av-body h4{ margin:0 0 4px 0; font-size:1.02rem; }
+.av-body p{ margin:0 0 4px 0; }
+
+.viagens-list{ display:grid; gap:12px; }
+.viagem-item{ display:grid; grid-template-columns:120px 1fr; gap:12px; border:2px solid var(--border); border-radius: var(--radius-lg); padding:12px; }
+.bus-thumb{
+  width:120px; height:96px; border-radius:14px; border:3px solid var(--border);
+  display:grid; place-items:center; overflow:hidden; background:#fff;
+}
+.bus-thumb img{ width:100%; height:100%; object-fit:cover; }
+.bus-thumb i{ font-size:42px; color: color-mix(in oklab, var(--roxo) 55%, #777); }
+
+.viagem-main .line-1{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.badge{ display:inline-block; border-radius:999px; padding:6px 10px; border:2px solid var(--border); background: color-mix(in oklab, var(--roxo) 6%, #fff); font-weight:800; font-size:.92rem; color:#494949; }
+.viagem-main .line-2{ display:flex; gap:16px; flex-wrap:wrap; color:#575757; margin:6px 0; }
+.viagem-main .line-2 i{ color:var(--roxo); margin-right:6px; }
+
+.pontos{ list-style:none; margin:8px 0 0; padding:0; display:grid; gap:6px; }
+.pontos li{ display:grid; grid-auto-flow:column; align-items:center; gap:8px; font-size:.97rem; color:#333; }
+.pontos i{ color:var(--roxo); }
+
+.empty-company{
+  background:#fff; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);
+  padding:26px; display:grid; gap:8px; place-items:center; color:#6a6a6a; text-align:center;
+  border:2px dashed var(--border);
+}
+.empty-company i{ font-size:40px; color: color-mix(in oklab, var(--roxo) 55%, #777); }
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+  .viagem-item{ grid-template-columns: 1fr; }
+  .empresa-card{ grid-template-columns: 1fr; justify-items:center; text-align:center; }
+}

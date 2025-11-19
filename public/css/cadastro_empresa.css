@@ -1,0 +1,170 @@
+:root{
+  --roxo: var(--bm-purple);
+  --roxo-700: var(--bm-purple-700);
+  --amarelo: var(--bm-yellow);
+  --lavender: var(--bm-bg);
+  --ink: var(--bm-ink, #1f1f1f);
+  --white: var(--bm-white, #fff);
+  --border: color-mix(in oklab, var(--roxo) 22%, white);
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 18px 40px rgba(0,0,0,.12);
+  --shadow-md: 0 10px 24px rgba(0,0,0,.10);
+  --shadow-sm: 0 6px 16px rgba(0,0,0,.08);
+}
+
+/* ===== Seção ===== */
+.company-section{
+  position:relative;
+  background: var(--lavender);
+  padding: clamp(32px,6vw,64px) 16px;
+}
+.company-hero-bg{
+  position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(1200px 500px at 85% 40%, color-mix(in oklab, var(--roxo) 12%, transparent), transparent 60%),
+    radial-gradient(800px 400px at 10% 60%, color-mix(in oklab, var(--amarelo) 16%, transparent), transparent 60%);
+}
+
+/* ===== Card ===== */
+.company-card{
+  position:relative; z-index:1;
+  max-width:980px; margin:0 auto;
+  background:var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(28px,4vw,44px) clamp(22px,4vw,56px);
+}
+
+.company-title{
+  margin:0; text-align:center; color:var(--roxo);
+  font-weight:800; font-size: clamp(28px,2.6vw,36px);
+}
+.company-subtitle{
+  text-align:center; margin:6px auto 16px; color:#595959;
+  max-width:720px;
+}
+
+/* ===== Logo upload ===== */
+.logo-upload{
+  display:grid; place-items:center; gap:10px; margin: 8px 0 8px;
+}
+/* ===== Logo upload (agora redonda) ===== */
+.logo-box{
+  width:120px;
+  height:120px;
+  border-radius:50%;             /* <<< era 20px */
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:#fff;
+  border:4px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+.logo-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.logo-box i{
+  font-size:40px;
+  color: color-mix(in oklab, var(--roxo) 60%, #777);
+}
+
+.btn-file{
+  display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center;
+  padding:10px 16px; border-radius: var(--radius-sm);
+  border:2px solid var(--roxo); background:#fff; color:var(--roxo);
+  font-weight:800; cursor:pointer;
+  transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
+}
+.btn-file:hover{ filter:brightness(.98); }
+.btn-file:active{ transform: translateY(1px); }
+.file-hint{ color: color-mix(in oklab, var(--roxo) 40%, #666); font-size:.88rem; }
+
+/* ===== Form ===== */
+.company-form{ display:grid; gap:14px; margin-top:10px; }
+
+.cf-label{ font-size:.95rem; color:#4b4b4b; margin-top:6px; }
+.cf-input{
+  width:100%; height:48px; padding:0 14px;
+  border:2px solid var(--border); border-radius: var(--radius-md);
+  background:#fff; color: var(--ink); font-size:1rem; outline:none;
+  transition: border-color .2s, box-shadow .2s, background-color .2s;
+}
+.cf-input::placeholder{ color: color-mix(in oklab, var(--roxo) 45%, white); }
+.cf-input:focus{ border-color: var(--roxo); box-shadow: 0 0 0 4px color-mix(in oklab, var(--roxo) 24%, transparent); }
+
+.form-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+.form-field{ display:grid; gap:6px; }
+
+/* ===== Upload de arquivo (genérico) ===== */
+.file-upload-box{
+  display:grid; grid-auto-flow:row; gap:10px; align-items:start;
+  padding:16px; border:2px dashed var(--border); border-radius:var(--radius-md);
+  background: color-mix(in oklab, var(--roxo) 3%, white);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+.file-upload-box:has(input:invalid){
+  border-color:#e74c3c; background: rgba(231,76,60,.05);
+}
+
+.btn-file-upload{
+  display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center;
+  border:none; border-radius:var(--radius-sm);
+  padding:10px 16px; font-weight:700; font-size:.95rem; cursor:pointer;
+  background: var(--roxo); color:white;
+  transition: background-color .2s ease, transform .08s ease;
+  width:fit-content;
+}
+
+.btn-file-upload:hover{ background: var(--roxo-700); }
+.btn-file-upload:active{ transform:translateY(1px); }
+
+.file-hint{
+  color:#7a7a7a; font-size:.9rem; display:block;
+}
+
+.file-name{
+  color:#27ae60; font-size:.95rem; font-weight:600;
+}
+
+.cf-select{
+  appearance:none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='%235a1eaf'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center; background-size:20px; padding-right:42px;
+}
+
+/* ===== Ações ===== */
+.form-actions{
+  display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:4px;
+}
+.btn-text{
+  color:var(--roxo); text-decoration:none; font-weight:800; display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center;
+}
+.btn-text:hover{ text-decoration:underline; color:var(--roxo-700); }
+
+.btn-primary{
+  display:inline-grid; grid-auto-flow:column; gap:10px; align-items:center;
+  border:none; border-radius: var(--radius-sm);
+  padding:14px 20px; font-weight:800; font-size:1.03rem; cursor:pointer;
+  color:#3b2d00; background: var(--amarelo); box-shadow: var(--shadow-sm);
+  transition: transform .08s ease, filter .2s ease;
+}
+.btn-primary:hover{ filter:brightness(.98); }
+.btn-primary:active{ transform: translateY(1px); }
+
+.next-hint{
+  margin: 10px 0 0; color:#6a6a6a; text-align:center; font-size:.95rem;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 760px){
+  .company-card{ padding: 28px 18px; }
+  .form-grid{ grid-template-columns: 1fr; }
+}

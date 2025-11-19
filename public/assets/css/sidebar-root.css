@@ -1,0 +1,26 @@
+/* Tema "root" para sidebar: cores, hover, active */
+.sidebar {
+	--sb-bg: #0b3d91;         /* fundo */
+	--sb-text: #ffffff;       /* texto */
+	--sb-accent: #ffb400;     /* destaque */
+	--sb-hover: rgba(255,180,0,0.12);
+	background: var(--sb-bg);
+	color: var(--sb-text);
+}
+.sidebar a {
+	color: var(--sb-text);
+	text-decoration: none;
+}
+.sidebar a:hover {
+	background: var(--sb-hover);
+	color: var(--sb-text);
+}
+.sidebar .active, .sidebar .menu-item.active {
+	background: linear-gradient(90deg, rgba(255,180,0,0.08), transparent);
+	color: var(--sb-accent);
+	border-left: 4px solid var(--sb-accent);
+}
+/* Ajustes responsivos mínimos */
+@media (max-width: 800px){
+	.sidebar { padding: 12px; }
+}

@@ -9,6 +9,9 @@ class Controllers{
         $arquivo = ('../app/Views/'.$view.'.php');
         
         if(file_exists($arquivo)){
+            if (is_array($dados) && !empty($dados)) {
+                extract($dados, EXTR_SKIP);
+            }
             require_once $arquivo;
         }else{
             die("O arquivo não existe kkk");

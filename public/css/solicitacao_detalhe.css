@@ -1,0 +1,373 @@
+/* ==============================
+   VARIÁVEIS DE COR / BASE
+   ============================== */
+:root{
+  --roxo: #5b3bd7;
+  --roxo-700: #4a20ab;
+  --amarelo: #ffd447;
+  --lavender: #f5f3ff;
+  --ink: #1f1f1f;
+  --white: #ffffff;
+  --border: #e0d6ff;
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 18px 40px rgba(0,0,0,.08);
+  --shadow-md: 0 10px 24px rgba(0,0,0,.06);
+}
+
+/* ==============================
+   LAYOUT GERAL DA PÁGINA
+   ============================== */
+.soli-section{
+  background: var(--lavender);
+  min-height: calc(100vh - 80px);
+  /* estava 24px 16px 40px */
+  padding: 18px 12px 32px;
+}
+
+.soli-container{
+  /* estava 960px */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* link voltar + título */
+.soli-back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--roxo);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.soli-back-link i{
+  font-size: 1rem;
+}
+
+.soli-back-link:hover{
+  color: var(--roxo-700);
+  text-decoration: underline;
+}
+
+.soli-page-title{
+  text-align: center;
+  font-size: 2rem;          /* antes: 1.4rem */
+  font-weight: 800;
+  color: var(--roxo);
+  margin: 0 0 18px;
+}
+
+
+/* ==============================
+   CARD PRINCIPAL
+   ============================== */
+.soli-card{
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 22px 26px 26px;
+}
+
+/* ==============================
+   CABEÇALHO DA SOLICITAÇÃO
+   ============================== */
+.soli-header{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.soli-avatar{
+  width: 200px;             /* antes: 82px */
+  height: 200px;            /* antes: 82px */
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 20%, #ffffff, #d6c7ff);
+}
+
+
+.soli-avatar i{
+  font-size: 42px;
+  color: var(--roxo);
+}
+
+.soli-header-info{
+  flex: 1;
+}
+
+.soli-name{
+  margin: 0 0 8px;
+  font-size: 1.6rem;        /* antes: 1.3rem */
+  font-weight: 800;
+  color: var(--ink);
+}
+
+
+/* chips */
+.soli-chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  font-size: .85rem;
+  font-weight: 700;
+  background: #fdfbff;
+  color: #4b4b4b;
+}
+
+.chip i{
+  font-size: 1rem;
+  vertical-align: middle;
+  color: var(--roxo);
+  margin-right: 6px;   /* 🔥 espaçamento entre ícone e texto */
+  display: inline-block;
+}
+
+
+.chip-company{
+  background: #f1ecff;
+}
+
+.chip-status{
+  text-transform: uppercase;
+}
+
+/* status específicos */
+.chip-status-pendente{
+  background: #fff6c2;
+  border-color: #ffe68a;
+  color: #7a5b00;
+}
+
+.chip-status-aprovada{
+  background: #d9ffe3;
+  border-color: #a8f4bc;
+  color: #1d7b3a;
+}
+
+.chip-status-recusada{
+  background: #ffe0e0;
+  border-color: #ffc1c1;
+  color: #b3261e;
+}
+
+.chip-date{
+  border-style: dashed;
+}
+
+/* ==============================
+   BLOCOS (Dados / Documentação / Motivo)
+   ============================== */
+.soli-block{
+  margin-top: 18px;
+}
+
+.soli-block-title{
+  margin: 0 0 8px;
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--roxo);
+}
+
+/* ==============================
+   GRID DE CAMPOS - DADOS
+   ============================== */
+.soli-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px 18px;
+}
+
+.soli-field{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.soli-field-full{
+  grid-column: 1 / -1;
+}
+
+.soli-field label{
+  font-size: 1rem;          /* antes: 0.8rem */
+  color: #7a719f;
+}
+
+
+.soli-field input{
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border);
+  background: #faf8ff;
+  font-size: 1rem;          /* antes: 0.9rem */
+  color: var(--ink);
+}
+
+
+.soli-field input[readonly]{
+  cursor: default;
+}
+
+/* ==============================
+   TABELA DE DOCUMENTAÇÃO
+   ============================== */
+.soli-doc-table{
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--border);
+  background: #ffffff;
+  font-size: .9rem;
+}
+
+.soli-doc-table tr:nth-child(even){
+  background: #faf8ff;
+}
+
+.soli-doc-table td{
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee6ff;
+}
+
+.soli-doc-table tr:last-child td{
+  border-bottom: none;
+}
+
+.doc-label{
+  color: #3f3f3f;
+}
+
+.doc-action{
+  white-space: nowrap;
+}
+
+.doc-action i{
+  margin-right: 6px;
+  font-size: 1rem;
+  vertical-align: middle;
+  color: var(--roxo);
+}
+
+.doc-action a{
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--roxo);
+}
+
+.doc-action a:hover{
+  text-decoration: underline;
+}
+
+/* ==============================
+   AÇÕES (ACEITAR / RECUSAR)
+   ============================== */
+.soli-actions-form{
+  margin-top: 18px;
+}
+
+.soli-actions{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.btn-soli{
+  min-width: 140px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-weight: 800;
+  font-size: .95rem;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .05s ease, filter .05s ease;
+}
+
+.btn-aceitar{
+  background: #d9ffe3;
+  color: #1d7b3a;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-recusar{
+  background: #ffe0e0;
+  color: #b3261e;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-soli:hover{
+  filter: brightness(.97);
+}
+
+.btn-soli:active{
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,.18) inset;
+}
+
+/* ==============================
+   MOTIVO DA RECUSA (TEXTAREA)
+   ============================== */
+.soli-block-motivo{
+  margin-top: 6px;
+}
+
+.soli-block-motivo textarea{
+  width: 100%;
+  min-height: 110px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border);
+  background: #faf8ff;
+  font-size: .9rem;
+  color: var(--ink);
+  resize: vertical;
+}
+
+.soli-block-motivo textarea::placeholder{
+  color: #b0a4df;
+  font-style: italic;
+}
+
+/* ==============================
+   RESPONSIVO
+   ============================== */
+@media (max-width: 768px){
+  .soli-card{
+    padding: 18px 16px 22px;
+  }
+
+  .soli-header{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .soli-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .soli-actions{
+    flex-direction: column;
+  }
+
+  .btn-soli{
+    width: 100%;
+  }
+}

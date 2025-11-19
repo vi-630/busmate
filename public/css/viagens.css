@@ -1,0 +1,364 @@
+/* Padronização do espaçamento do container principal */
+.content {
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--lavender);
+}
+:root{
+  --roxo: var(--bm-purple, #5a2dcc);
+  --roxo-700: var(--bm-purple-700, #4a20ab);
+  --amarelo: var(--bm-yellow, #f6c445);
+  --lavender: var(--bm-bg, #f5f3ff);
+  --ink: var(--bm-ink, #1f1f1f);
+  --white: var(--bm-white, #fff);
+  --border: color-mix(in oklab, var(--roxo) 22%, white);
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 18px 40px rgba(0,0,0,.12);
+  --shadow-md: 0 10px 24px rgba(0,0,0,.10);
+  --shadow-sm: 0 6px 16px rgba(0,0,0,.08);
+}
+
+/* wrapper geral da página (dentro de .content) */
+.viagens-wrapper{
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+/* título já está no .page-head; só ajuste se quiser */
+.page-head h1{
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+/* ALERTAS (reuso) */
+.alert{
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:.95rem;
+}
+.alert-success{
+  background:#d4edda;
+  border:1px solid #c3e6cb;
+  color:#155724;
+}
+.alert-danger{
+  background:#f8d7da;
+  border:1px solid #f5c6cb;
+  color:#721c24;
+}
+
+/* =====================
+   PAINEL (CARD GRANDÃO)
+   ===================== */
+.viagens-panel{
+  background: #f8f5ff;
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--border);
+  padding: 16px 18px 18px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 10px;
+}
+
+.panel-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom: 4px;
+}
+
+.panel-title{
+  margin:0;
+  font-size:1.2rem;
+  font-weight:900;
+  color:var(--ink);
+}
+
+/* estado vazio */
+.panel-empty{
+  display:grid;
+  place-items:center;
+  text-align:center;
+  gap:6px;
+  padding:22px 18px;
+  border-radius: var(--radius-lg);
+  border:2px dashed var(--border);
+  background:#fff;
+  color:#6a6a6a;
+}
+.panel-empty i{
+  font-size:36px;
+  color: color-mix(in oklab, var(--roxo) 55%, #777);
+}
+.panel-help{
+  font-size:.85rem;
+  color:#8a86a8;
+}
+
+/* botão primário padrão BM (se não tiver em outro css) */
+.btn-primary{
+  display:inline-grid;
+  grid-auto-flow:column;
+  align-items:center;
+  gap:8px;
+  border:none;
+  border-radius: var(--radius-sm);
+  padding:10px 16px;
+  background:var(--amarelo);
+  color:#3b2d00;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:none;
+  box-shadow: var(--shadow-sm);
+  font-size:.95rem;
+}
+.btn-primary:hover{
+  filter:brightness(.97);
+}
+.btn-primary.btn-disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+/* linkzinho padrão */
+.btn-link{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  font-size:.86rem;
+  font-weight:700;
+  text-decoration:none;
+  color:var(--roxo);
+}
+.btn-link:hover{
+  text-decoration:underline;
+}
+.btn-danger{
+  color:#b3261e;
+}
+
+/* =====================
+   GRID DE ÔNIBUS
+   ===================== */
+.onibus-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:12px;
+}
+
+.onibus-card{
+  background:#fff;
+  border-radius: var(--radius-lg);
+  border:2px solid var(--border);
+  padding:10px 12px;
+  box-shadow: var(--shadow-sm);
+  display:grid;
+  grid-template-columns: 110px 1fr;
+  gap:10px;
+  align-items:center;
+}
+
+.onibus-img{
+  width:110px;
+  height:80px;
+  border-radius:18px;
+  overflow:hidden;
+  border:3px solid var(--border);
+  display:grid;
+  place-items:center;
+  background:#fff;
+}
+.onibus-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+.onibus-main{
+  display:grid;
+  gap:4px;
+}
+
+.onibus-title{
+  margin:0;
+  font-size:1rem;
+  font-weight:900;
+  color:var(--ink);
+}
+
+.onibus-meta{
+  margin:0;
+  font-size:.9rem;
+  color:#555;
+}
+.onibus-meta i{
+  margin-right:4px;
+  color:var(--roxo);
+}
+
+.onibus-footer{
+  margin-top:4px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+/* badges */
+.badge{
+  display:inline-grid;
+  grid-auto-flow:column;
+  gap:6px;
+  align-items:center;
+  padding:6px 12px;
+  border-radius:999px;
+  border:2px solid var(--border);
+  font-size:.8rem;
+  font-weight:800;
+}
+.badge-ativo{
+  background:#d9ffe3;
+  border-color:#a8f4bc;
+  color:#1d7b3a;
+}
+.badge-inativo{
+  background:#ffe0e0;
+  border-color:#ffc1c1;
+  color:#b3261e;
+}
+
+.onibus-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* =====================
+   LISTA DE VIAGENS
+   ===================== */
+.viagens-list{
+  display:grid;
+  gap:12px;
+}
+
+.viagem-card{
+  background:#fff;
+  border-radius: var(--radius-lg);
+  border:2px solid var(--border);
+  padding:10px 12px;
+  box-shadow: var(--shadow-sm);
+  display:grid;
+  grid-template-columns: 120px 1fr;
+  gap:10px;
+}
+
+.viagem-img{
+  width:120px;
+  height:88px;
+  border-radius:18px;
+  overflow:hidden;
+  border:3px solid var(--border);
+  display:grid;
+  place-items:center;
+  background:#fff;
+}
+.viagem-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+.viagem-main{
+  display:grid;
+  gap:6px;
+}
+
+.viagem-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:8px;
+}
+
+.viagem-title{
+  margin:0;
+  font-size:1rem;
+  font-weight:900;
+  color:var(--ink);
+}
+
+.viagem-sub{
+  margin:2px 0 0;
+  font-size:.88rem;
+  color:#555;
+}
+.viagem-sub i{
+  margin-right:4px;
+  color:var(--roxo);
+}
+
+.viagem-body{
+  display:grid;
+  gap:2px;
+}
+
+.viagem-info,
+.viagem-extra{
+  margin:0;
+  font-size:.9rem;
+  color:#444;
+}
+.viagem-info i,
+.viagem-extra i{
+  margin-right:4px;
+  color:var(--roxo);
+}
+
+.viagem-footer{
+  margin-top:6px;
+  display:flex;
+  justify-content:flex-end;
+}
+.viagem-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* responsivo */
+@media (max-width: 780px){
+  .onibus-grid {
+    grid-template-columns: 1fr;
+  }
+  .onibus-card,
+  .viagem-card{
+    grid-template-columns: 1fr;
+  }
+  .onibus-img,
+  .viagem-img{
+    width:100%;
+    max-width:260px;
+    justify-self:flex-start;
+  }
+  .viagem-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .onibus-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; /* Mantém proporção 4:3 */
+    justify-self: center;
+  }
+}

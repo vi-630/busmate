@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-*{ 
-  box-sizing: border-box; 
+* {
+  box-sizing: border-box;
 }
 
-html, body { 
-  height: 100%; 
+html, body {
+  height: 100%;
 }
 
-body { 
-  margin: 0; 
-  font-family: 'Poppins', sans-serif; 
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -20,141 +20,139 @@ body {
   --white: var(--bm-white);
 }
 
-.bg-dark{
+/* ===== HEADER STICKY ===== */
+.bg-dark {
   background: var(--purple);
-  position: sticky; 
-  top: 0; 
-  left: 0; 
+  position: sticky;
+  top: 0;
+  left: 0;
   right: 0;
   z-index: 9999;
 }
 
-header.bg-dark + * { 
-  margin-top: 0 !important; 
-  border-top: 1px solid transparent; 
+header.bg-dark + * {
+  margin-top: 0 !important;
+  border-top: 1px solid transparent;
 }
 
-.container { 
-  max-width: 100%; 
-  margin: 0; 
-  padding: 0; 
+/* ===== CONTAINER ===== */
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0 20px; /* pode ser 0 se quiser colado TOTAL */
 }
 
+
+/* ===== NAVBAR DESKTOP / TABLET ===== */
 .navbar {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 12px; 
-  min-height: 70px; 
-  padding: 12px 20px;
+  gap: 16px;
+  min-height: 70px;
+  padding: 10px 0;
   color: var(--white);
 }
 
+/* Logo */
 .navbar > img {
-  width: auto !important; 
-  height: auto !important;
-  max-height: 34px; 
-  margin-left: 10vh;
+  height: 34px;
+  width: auto;
 }
 
-.navbar-collapse { 
-  flex: 1; 
-  display: flex; 
-  justify-content: flex-end; 
+/* Ignora comportamento de "collapse" do Bootstrap, vira só um wrapper de links */
+.navbar-collapse {
+  flex: 1;
+  display: flex !important;
+  justify-content: flex-end;
 }
 
+/* Lista de links */
 .navbar-nav {
-  display: flex; 
-  align-items: center; 
-  gap: 28px; 
-  list-style: none; 
-  margin: 0; 
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
   padding: 0;
 }
 
+/* Link */
 .nav-link {
   color: var(--yellow);
-  margin-right: 10vh; 
-  margin-left: -10vh;
-  text-decoration: none; 
-  font-size: 20px; 
-  padding: 10px 20px; 
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
   border-radius: 20px;
   transition: color .2s ease, background .2s ease, transform .1s ease;
 }
 
-.nav-link:hover, .nav-link:focus-visible {
-  color: var(--white); 
-  background: rgba(255,255,255,.10); 
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--white);
+  background: rgba(255,255,255,.12);
   outline: none;
 }
 
-.nav-link:active { 
-  transform: translateY(1px); 
+.nav-link:active {
+  transform: translateY(1px);
 }
 
-.navbar-toggler { 
-  display: none !important; 
+/* Esconde botão hamburguer, já que não estamos usando JS do Bootstrap */
+.navbar-toggler {
+  display: none !important;
 }
 
-@media (max-width: 992px) {
-  .navbar { 
-    padding: 10px 14px; 
-    min-height: 64px; 
-  }
-  .navbar > img { 
-    max-height: 30px; 
-    margin-left: 0; 
-  }
-  .navbar-nav { 
-    gap: 18px; 
-  }
-}
-
-@media (max-width: 900px) {
+/* ===== BREAKPOINT MÉDIO (notebook menor / tablet paisagem) ===== */
+@media (max-width: 1100px) {
   .navbar {
-    display: grid;
-    grid-template-areas: 
-      "logo" 
-      "menu";
-    row-gap: 8px;
-    padding: 10px 12px;
+    min-height: 60px;
   }
+
   .navbar > img {
-    grid-area: logo; 
-    justify-self: center; 
-    align-self: center; 
-    margin: 0;
+    height: 30px;
   }
-  .navbar-collapse {
-    grid-area: menu; 
-    flex: 0 0 100%;
-    display: flex; 
-    justify-content: center !important;
-  }
+
   .navbar-nav {
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 16px;
+    gap: 14px;
   }
-  .nav-link { 
-    margin: 0; 
-    padding: 8px 12px; 
-    border-radius: 12px; 
-    font-size: 18px; 
+
+  .nav-link {
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 14px;
   }
 }
 
-@media (max-width: 420px) {
-  .navbar { 
-    padding: 8px 10px; 
+/* ===== MOBILE ===== */
+@media (max-width: 760px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 0 10px;
   }
-  .navbar-nav { 
-    gap: 12px; 
+
+  .navbar > img {
+    height: 26px;
   }
-  .nav-link { 
-    font-weight: 600; 
-    padding: 6px 8px; 
-    font-size: 17px; 
+
+  .navbar-collapse {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+    padding: 6px 10px;
+    border-radius: 999px;
   }
 }

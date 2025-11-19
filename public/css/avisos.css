@@ -1,0 +1,419 @@
+/* ===== BASE DO CONTEÚDO ===== */
+
+.content{
+  padding: clamp(20px, 3vw, 32px);
+}
+
+/* wrapper geral da página de avisos */
+.avisos-wrapper{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0; /* content já tem padding */
+}
+
+/* ===== ALERTAS (mesmo estilo que o resto do sistema) ===== */
+
+.alert{
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alert-success{
+  background:#d4edda;
+  border:1px solid #c3e6cb;
+  color:#155724;
+}
+
+.alert-danger{
+  background:#f8d7da;
+  border:1px solid #f5c6cb;
+  color:#721c24;
+}
+
+/* ===== CABEÇALHO (título + busca + botão) ===== */
+
+.avisos-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.avisos-title{
+  margin:0;
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--roxo);
+}
+
+/* bloco da busca + botão novo aviso */
+.avisos-search{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* reaproveita o mesmo “jeito” da busca de empresas */
+
+.avisos-search .search-input-wrap{
+  position:relative;
+  flex:1;
+}
+
+.avisos-search .search-input-wrap i{
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:18px;
+  color:var(--roxo);
+}
+
+.avisos-search .search-input-wrap input{
+  width:100%;
+  height:46px;
+  padding:0 14px 0 38px;
+  border:2px solid var(--border);
+  border-radius:14px;
+  outline:none;
+  color:var(--ink);
+  background:#fff;
+}
+
+.avisos-search .search-input-wrap input:focus{
+  border-color:var(--roxo);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--roxo) 24%, transparent);
+}
+
+/* botão padrão amarelo igual ao index_app */
+
+.btn-primary{
+  display:inline-grid;
+  grid-auto-flow:column;
+  gap:8px;
+  align-items:center;
+  cursor:pointer;
+  border-radius: 10px;
+  font-weight:800;
+  font-size:1rem;
+  text-decoration:none;
+  padding: 10px 16px;
+  border:none;
+  color:#3b2d00;
+  background:var(--amarelo);
+  box-shadow: var(--shadow-sm);
+  transition: filter .2s ease, transform .08s ease;
+}
+
+.btn-primary:hover{
+  filter:brightness(.98);
+}
+
+.btn-primary:active{
+  transform: translateY(1px);
+}
+
+.btn-novo-aviso{
+  white-space:nowrap;
+}
+
+/* link “voltar” do formulário */
+
+.btn-text-back{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  font-weight:700;
+  color:var(--roxo);
+}
+
+.btn-text-back:hover{
+  text-decoration:underline;
+}
+
+/* ===== ESTADO VAZIO ===== */
+
+.avisos-empty{
+  margin-top:30px;
+  padding:26px;
+  text-align:center;
+  border-radius:18px;
+  border:2px dashed var(--border);
+  background:#fff;
+  color:#6a6a6a;
+}
+
+.avisos-empty i{
+  font-size:38px;
+  color: color-mix(in oklab, var(--roxo) 55%, #777);
+  margin-bottom:8px;
+}
+
+/* ===== LISTA DE AVISOS ===== */
+
+.avisos-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:10px;
+}
+
+.aviso-card{
+  background:#fff;
+  border-radius:18px;
+  border:2px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  padding:14px 16px 12px;
+}
+
+.aviso-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.aviso-card-head > div{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.aviso-title{
+  margin:0;
+  font-size:1.05rem;
+  font-weight:800;
+  color:var(--ink);
+}
+
+.aviso-time{
+  color:#7a719f;
+  font-size:.8rem;
+}
+
+.aviso-text{
+  margin:10px 0 6px;
+  font-size:.95rem;
+  line-height:1.6;
+  color:#444;
+}
+
+/* BADGES STATUS */
+
+.badge{
+  display:inline-grid;
+  grid-auto-flow:column;
+  gap:6px;
+  align-items:center;
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:.78rem;
+  font-weight:800;
+}
+
+.badge-ativo{
+  background:#d9ffe3;
+  border:1px solid #a8f4bc;
+  color:#1d7b3a;
+}
+
+.badge-inativo{
+  background:#ffe0e0;
+  border:1px solid #ffc1c1;
+  color:#b3261e;
+}
+
+/* rodapé do card */
+
+.aviso-card-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-top:6px;
+}
+
+.aviso-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  font-size:.82rem;
+  color:#7a719f;
+}
+
+.aviso-meta i{
+  margin-right:4px;
+  color:var(--roxo);
+}
+
+/* ações: editar / excluir */
+
+.aviso-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.btn-link{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  font-size:.85rem;
+  font-weight:700;
+  text-decoration:none;
+  color:var(--roxo);
+}
+
+.btn-link:hover{
+  text-decoration:underline;
+}
+
+.btn-danger{
+  color:#b3261e;
+}
+
+/* ===== FORMULÁRIO DE CADASTRO / EDIÇÃO ===== */
+
+.aviso-form-card{
+  background:#fff;
+  border-radius:18px;
+  border:2px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  padding:16px 18px 18px;
+}
+
+.aviso-form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.form-row{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.form-row label{
+  font-size:.9rem;
+  font-weight:700;
+  color:#7a719f;
+}
+
+.form-row input[type="text"],
+.form-row input[type="datetime-local"],
+.form-row select{
+  height:44px;
+  border-radius:14px;
+  border:2px solid var(--border);
+  padding:0 12px;
+  font-size:.95rem;
+  outline:none;
+  background:#fff;
+}
+
+.form-row textarea{
+  min-height:140px;
+  border-radius:14px;
+  border:2px solid var(--border);
+  padding:10px 12px;
+  font-size:.95rem;
+  resize:vertical;
+  background:#fff;
+}
+
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus{
+  border-color:var(--roxo);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--roxo) 24%, transparent);
+}
+
+.required{
+  color:#b3261e;
+}
+
+/* linha com datas + situação */
+
+.form-row-inline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.form-row-inline > div{
+  flex:1;
+  min-width:220px;
+}
+
+/* blocos de agendamento (datas aparecem só se marcado no HTML/JS) */
+
+.agendar-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:.85rem;
+  color:#7a719f;
+}
+
+.checkbox-inline{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-weight:700;
+  color:var(--ink);
+}
+
+/* ações do form */
+
+.form-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:6px;
+}
+
+.btn-secondary{
+  border-radius:10px;
+  border:2px solid var(--border);
+  padding:10px 16px;
+  font-size:.95rem;
+  font-weight:700;
+  color:#555;
+  background:#f8f5ff;
+  text-decoration:none;
+}
+
+.btn-secondary:hover{
+  filter:brightness(.97);
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 860px){
+  .avisos-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .avisos-search{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .btn-novo-aviso{
+    padding-inline:14px;
+  }
+
+  .aviso-card-footer{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}

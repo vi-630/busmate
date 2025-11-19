@@ -1,0 +1,232 @@
+:root{
+  --roxo: var(--bm-purple, #5b3bd7);
+  --roxo-700: var(--bm-purple-700, #4a20ab);
+  --amarelo: var(--bm-yellow, #ffd447);
+  --lavender: var(--bm-bg, #f5f3ff);
+  --ink: var(--bm-ink, #1f1f1f);
+  --white: var(--bm-white, #ffffff);
+  --border: color-mix(in oklab, var(--roxo) 20%, #ffffff);
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 18px 40px rgba(0,0,0,.10);
+  --shadow-md: 0 10px 24px rgba(0,0,0,.08);
+  --shadow-sm: 0 6px 16px rgba(0,0,0,.06);
+}
+
+/* ===== Seção / BG ===== */
+.aviso-section{
+  position:relative;
+  background: var(--lavender);
+  padding: clamp(32px,6vw,64px) 16px;
+  min-height: calc(100vh - 80px);
+}
+
+.aviso-hero-bg{
+  position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(1100px 480px at 85% 30%, color-mix(in oklab, var(--roxo) 12%, transparent), transparent 60%),
+    radial-gradient(900px 420px at 10% 70%, color-mix(in oklab, var(--amarelo) 18%, transparent), transparent 60%);
+}
+
+/* ===== Card ===== */
+.aviso-card{
+  position:relative; z-index:1;
+  max-width:860px; margin:0 auto;
+  background:var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(26px,4vw,40px) clamp(20px,4vw,40px);
+}
+
+/* ===== Cabeçalho ===== */
+.aviso-title{
+  margin:0;
+  text-align:center;
+  color:var(--roxo);
+  font-weight:800;
+  font-size: clamp(26px,2.4vw,34px);
+}
+.aviso-subtitle{
+  text-align:center;
+  margin:6px auto 18px;
+  color:#5e5e5e;
+  max-width:640px;
+  font-size:.96rem;
+}
+
+/* ===== Alerts ===== */
+.aviso-alert{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom:10px;
+  font-size:.92rem;
+}
+.aviso-alert i{
+  font-size:1.1rem;
+}
+.aviso-alert-erro{
+  background:#ffe0e0;
+  color:#b3261e;
+  border:1px solid #ffc1c1;
+}
+.aviso-alert-ok{
+  background:#e1f6e8;
+  color:#1d7b3a;
+  border:1px solid #bde8ca;
+}
+
+/* ===== Form ===== */
+.aviso-form{
+  display:grid;
+  gap:14px;
+  margin-top:8px;
+}
+
+.af-label{
+  font-size:.95rem;
+  color:#4b4b4b;
+  margin-bottom:4px;
+  display:block;
+}
+
+.required{
+  color:#e74c3c;
+}
+
+.af-input,
+.af-textarea,
+.af-select{
+  width:100%;
+  border-radius: var(--radius-md);
+  border:2px solid var(--border);
+  background:#ffffff;
+  padding:0 14px;
+  font-size:1rem;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .2s, box-shadow .2s, background-color .2s;
+}
+
+.af-input{
+  height:46px;
+}
+
+.af-textarea{
+  padding-top:10px;
+  padding-bottom:10px;
+  min-height:110px;
+  resize:vertical;
+}
+
+.af-input::placeholder,
+.af-textarea::placeholder{
+  color: color-mix(in oklab, var(--roxo) 40%, #b9b9b9);
+}
+
+.af-input:focus,
+.af-textarea:focus,
+.af-select:focus{
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--roxo) 20%, transparent);
+}
+
+/* Select com setinha bonitinha */
+.af-select{
+  appearance:none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='24' height='24' fill='%235b3bd7' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 12px center;
+  background-size:20px;
+  padding-right:40px;
+}
+
+.af-hint{
+  font-size:.82rem;
+  color:#8a8a8a;
+  margin-top:4px;
+}
+
+/* Grid de campos */
+.form-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap:14px;
+}
+.form-field{
+  display:flex;
+  flex-direction:column;
+}
+
+/* ===== Ações ===== */
+.form-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:8px;
+}
+
+.btn-text{
+  color:var(--roxo);
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  display:inline-grid;
+  grid-auto-flow:column;
+  gap:6px;
+  align-items:center;
+}
+.btn-text:hover{
+  text-decoration:underline;
+  color:var(--roxo-700);
+}
+
+.btn-primary{
+  display:inline-grid;
+  grid-auto-flow:column;
+  gap:8px;
+  align-items:center;
+  border:none;
+  border-radius:var(--radius-sm);
+  padding:11px 18px;
+  font-weight:800;
+  font-size:.98rem;
+  cursor:pointer;
+  background: var(--amarelo);
+  color:#3b2d00;
+  box-shadow: var(--shadow-sm);
+  transition:transform .08s ease, filter .2s ease;
+}
+.btn-primary:hover{
+  filter:brightness(.97);
+}
+.btn-primary:active{
+  transform:translateY(1px);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 780px){
+  .aviso-card{
+    padding:24px 18px;
+  }
+  .form-grid{
+    grid-template-columns: 1fr;
+  }
+  .form-actions{
+    flex-direction:column-reverse;
+    align-items:stretch;
+  }
+  .btn-primary{
+    width:100%;
+    justify-content:center;
+  }
+  .btn-text{
+    justify-content:center;
+  }
+}

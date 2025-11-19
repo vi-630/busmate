@@ -10,182 +10,272 @@
   --maxw: 1120px;
   --radius-xl: var(--radius-xl);
   --radius-lg: var(--radius-lg);
-  --radius-md: var(--radius-md);
-  --radius-sm: var(--radius-sm);
-  --border-color: rgba(90, 30, 175, .20);
+  --border-color: color-mix(in oklab, var(--roxo) 30%, white);
 }
 
-.app-layout {
-  display: grid; 
-  grid-template-columns: minmax(220px,260px) 1fr;
-  gap: 28px; 
-  padding: 0 24px 0 0; 
-  background: var(--roxo-claro);
+/* TÍTULO */
+.page-head h1 {
+  margin: 18px 16px;
+  color: var(--roxo-vivo);
+  font-weight: 800;
 }
 
-.sidebar {
-  background: #e5b021; 
-  border-right: 4px solid rgba(0,0,0,.07);
-  border-radius: 0 20px 20px 0; 
-  padding: 22px 18px;
-  position: sticky; 
-  top: 70px;
+/* CARD */
+.card-box {
+  margin: 0 16px 20px;
+  padding: 18px 20px;
+  background: var(--branco);
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow);
 }
 
-.profile { 
-  display: grid; 
-  place-items: center; 
-  row-gap: 10px; 
-  margin-bottom: 18px; 
+.card-box h2 {
+  margin-bottom: 8px;
+  color: var(--roxo-vivo);
+  font-weight: 800;
 }
 
-.avatar {
-  width: 90px; 
-  height: 90px; 
-  border-radius: 50%;
-  background: #f8e4a8; 
-  display: grid; 
-  place-items: center; 
-  font-size: 42px; 
-  color: var(--roxo);
-  border: 3px solid rgba(0,0,0,.08);
+/* BADGES */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
-.user-name { 
-  font-weight: 700; 
-  color: #3a2c00; 
+.badge-ativo { background:#d1f7d6; color:#136b25; }
+.badge-inativo { background:#eee; color:#555; }
+.badge-pendente { background:#fff6cf; color:#826400; }
+.badge-recusada { background:#ffe0e0; color:#8b1212; }
+
+/* CAIXA LILÁS */
+.contrato-callout {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: #faf7ff;
+  border-radius: 12px;
+  border: 2px solid color-mix(in oklab, var(--roxo) 25%, white);
 }
 
-.menu { 
-  display: grid; 
-  gap: 8px; 
-  margin-top: 6px; 
+.contrato-callout p { margin-bottom: 10px; }
+
+/* TABELAS */
+.soli-doc-table{
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #e0d4ff;
+  background: #ffffff;
+  margin-bottom: 10px;
+  border-radius: 10px;     /* ← ADICIONADO */
+  overflow: hidden;        /* ← necessário para radius funcionar */
 }
 
-.menu .item {
-  display: grid; 
-  grid-template-columns: 26px 1fr; 
-  gap: 10px; 
-  align-items: center;
-  padding: 10px 12px; 
-  border-radius: 12px; 
-  color: #2d2200; 
-  text-decoration: none; 
+
+.soli-doc-table td{
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee6ff;
+}
+
+.soli-doc-table tr:last-child td{
+  border-bottom: none;
+}
+
+.doc-label{
+  color: #333;
   font-weight: 600;
 }
 
-.menu .item.active { 
-  background: rgba(255,255,255,.55); 
-  outline: 2px solid rgba(255,255,255,.7); 
+.doc-action{
+  white-space: nowrap;
 }
 
-.content { 
-  max-width: var(--maxw); 
-  padding-bottom: 28px; 
-  min-width: 0; 
+.doc-action i{
+  color: var(--roxo-vivo);
+  margin-right: 6px;
 }
 
-.page-head h1 {
-  margin: 14px 16px; 
-  color: var(--roxo-vivo); 
-  font-weight: 800; 
-  font-size: clamp(22px,3vw,28px);
-}
-
-
-.contract-card {
-  margin: 0 16px 24px;
-  background: var(--branco);
-  border-radius: var(--radius-lg);
-  border: 2px solid var(--border-color);
-  border: 2px solid color-mix(in oklab, var(--roxo) 30%, white);
-  box-shadow: var(--shadow);
-  padding: 18px;
-}
-
-.top-actions { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 14px; 
-  margin-bottom: 18px; 
-}
-
-.btn {
-  display: inline-grid; 
-  grid-auto-flow: column; 
-  gap: 10px; 
-  align-items: center;
-  padding: 10px 16px; 
-  border-radius: 12px; 
-  font-weight: 700; 
-  border: 2px solid transparent;
-  text-decoration: none; 
-  cursor: pointer;
-}
-
-.btn-outline { 
-  background: var(--branco); 
-  color: var(--roxo-vivo); 
-  border: 2px solid color-mix(in oklab, var(--roxo) 30%, white); 
-}
-
-.btn-primary { 
-  background: var(--roxo-vivo); 
-  color: var(--bm-white); 
-}
-
-.upload-form { 
-  display: grid; 
-  gap: 16px; 
-}
-
-.file-field {
-  display: grid; 
-  grid-auto-flow: column; 
-  align-items: center; 
-  gap: 10px;
-  padding: 12px 14px; 
-  border-radius: 10px; 
-  background: var(--branco);
-  border: 2px solid color-mix(in oklab, var(--roxo) 30%, white); 
+.doc-action a{
+  text-decoration: none;
+  font-weight: 700;
   color: var(--roxo-vivo);
 }
 
-.file-field input { 
-  display: none; 
+.doc-action a:hover{
+  text-decoration: underline;
 }
 
-.file-field:hover { 
-  background: #faf7ff; 
-  cursor: pointer; 
+.contrato-hint{
+  margin: 8px 0 10px;
+  color: #444;
+  font-size: .9rem;
+}
+
+/* FOOTER */
+.contrato-footer-hint {
+  margin: 0 16px 24px;
+  text-align: right;
+  color: #6c5a99;
+  font-size: 0.8rem;
+}
+
+/* Ações da tabela ficam mais próximas entre si */
+.soli-doc-table td.doc-action {
+  width: 1%;
+  white-space: nowrap;
+  padding-right: 40px; /* aproxima sem colar */
+}
+
+.soli-doc-table td.doc-action:last-child {
+  padding-right: 15px; /* iguala o alinhamento final */
+}
+
+/* Botão 'Anexar' estilo link */
+.btn-outline {
+cursor:pointer; 
+display:inline-flex; 
+gap:6px; 
+align-items:center;                
+color:var(--roxo-vivo); 
+font-weight:600; 
+text-decoration:underline
+}
+
+/* Ícone alinhado */
+.btn-outline i {
+  font-size: 16px;
+  color: var(--roxo-vivo);
+}
+
+/* HOVER somente com sublinhado (sem fundo, sem borda) */
+.btn-outline:hover {
+  text-decoration: underline;
+  background: none !important;
+  border: none !important;
+  filter: none !important;
+}
+
+form.upload-form button.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 10px 18px;
+  background: var(--roxo-vivo) !important;
+  color: var(--branco) !important;
+
+  border: none !important;
+  border-radius: 10px !important;
+
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  cursor: pointer;
+
+  transition: 0.15s ease-in-out;
+}
+
+form.upload-form button.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+form.upload-form button.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* ===== Modal PIX ===== */
+
+.mensalidade-callout {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  background: #faf7ff;
+  font-size: 0.9rem;
+}
+
+.mensalidade-callout p {
+  margin: 0 0 6px;
+}
+
+.btn-pix {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pix-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.pix-modal {
+  position: relative;
+  max-width: 430px;
+  width: 90%;
+  background: var(--branco);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px 18px 18px;
+}
+
+.pix-modal h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--roxo-vivo);
+  text-align: center;
+}
+
+.pix-modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #777;
+}
+
+.pix-qrcode-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 12px;
+}
+
+.pix-qrcode-wrap img {
+  max-width: 220px;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  background: #fff;
+}
+
+.pix-info p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.pix-chave {
+  font-family: monospace;
+  background: #f4f0ff;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.pix-hint {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
 }
 
 
-@media (max-width: 900px) {
-  .app-layout {
-    grid-template-columns: 1fr; 
-    gap: 16px; 
-    padding: 0;
-  }
-  .sidebar {
-    position: relative; 
-    top: 0; 
-    border-radius: 14px; 
-    margin: 0;
-  }
-  .menu { 
-    grid-template-columns: repeat(3, 1fr); 
-  }
-  .menu .item {
-    grid-template-columns: 1fr; 
-    justify-items: center; 
-    text-align: center; 
-    padding: 10px 8px;
-  }
-  .menu .item span { 
-    white-space: nowrap; 
-  }
-  .contract-card { 
-    margin: 0 16px 20px; 
-  }
-}

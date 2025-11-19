@@ -1,0 +1,39 @@
+.choose-section{ background:var(--bm-bg); padding:24px 16px; }
+.choose-wrap{ max-width:1100px; margin:0 auto; }
+.choose-head{ display:grid; grid-template-columns: 1fr; gap:10px; margin-bottom:12px; }
+.choose-head h1{ margin:0; color:var(--bm-purple); font-weight:900; }
+.back-link{
+  display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center;
+  color:var(--bm-purple); font-weight:800; text-decoration:none;
+}
+.back-link:hover{ text-decoration:underline; }
+
+.search{ display:grid; grid-template-columns:1fr auto; gap:8px; }
+.search input{ padding:10px 12px; border:2px solid color-mix(in oklab, var(--bm-purple) 22%, white); border-radius:12px; }
+.search button{ border:none; padding:10px 14px; border-radius:12px; background:var(--bm-yellow); font-weight:800; cursor:pointer; }
+
+.empty-box{ display:grid; place-items:center; gap:8px; padding:26px; border:2px dashed color-mix(in oklab, var(--bm-purple) 22%, white); border-radius:16px; color:#666; background:#fff; }
+
+.company-grid{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; }
+@media (max-width: 860px){ .company-grid{ grid-template-columns:1fr; } }
+
+.company-card{
+  display:grid; grid-template-columns: 86px 1fr; gap:12px;
+  border:2px solid color-mix(in oklab, var(--bm-purple) 22%, white);
+  border-radius:18px; padding:12px; background:#fff;
+}
+.company-card .logo{
+  width:86px; height:86px; border-radius:16px; display:grid; place-items:center;
+  border:3px solid color-mix(in oklab, var(--bm-purple) 22%, white);
+  overflow:hidden; background:#fff;
+}
+.company-card .logo img{ width:100%; height:100%; object-fit:cover; }
+.company-card .logo i{ font-size:40px; color: color-mix(in oklab, var(--bm-purple) 60%, #777); }
+.company-card .body h3{ margin:0; font-weight:900; color:var(--bm-ink); }
+.company-card .body p{ margin:2px 0; color:#555; }
+.company-card .actions{ grid-column: 1 / -1; display:flex; justify-content:flex-end; }
+.btn-primary{
+  display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center;
+  border:none; border-radius:10px; padding:10px 14px; background:var(--bm-yellow); font-weight:800; cursor:pointer;
+}
+.btn-primary:hover{ filter:brightness(.98); }

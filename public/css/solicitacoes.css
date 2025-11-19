@@ -1,0 +1,179 @@
+:root{
+  --roxo: var(--bm-purple, #5b3bd7);
+  --roxo-700: var(--bm-purple-700, #4a20ab);
+  --amarelo: var(--bm-yellow, #ffd447);
+  --lavender: var(--bm-bg, #f5f3ff);
+  --ink: var(--bm-ink, #1f1f1f);
+  --white: var(--bm-white, #fff);
+  --border: color-mix(in oklab, var(--roxo) 22%, white);
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 18px 40px rgba(0,0,0,.12);
+  --shadow-md: 0 10px 24px rgba(0,0,0,.10);
+  --shadow-sm: 0 6px 16px rgba(0,0,0,.08);
+}
+
+/* layout */
+.soli-section{ position:relative; background:var(--lavender); padding: clamp(28px,5vw,56px) 16px; }
+.soli-hero{ position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(1200px 500px at 85% 40%, color-mix(in oklab, var(--roxo) 12%, transparent), transparent 60%),
+    radial-gradient(800px 400px at 10% 60%, color-mix(in oklab, var(--amarelo) 16%, transparent), transparent 60%);
+}
+.soli-wrap{ position:relative; z-index:1; max-width:1100px; margin:0 auto; }
+
+/* head */
+.soli-head{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.soli-head h1{ margin:0; font-size: clamp(22px,2.2vw,30px); color:var(--roxo); font-weight:900; }
+.back-link{ color:var(--roxo); text-decoration:none; display:inline-grid; grid-auto-flow:column; gap:6px; align-items:center; font-weight:800; }
+.back-link:hover{ text-decoration:underline; color:var(--roxo-700); }
+
+/* tabs */
+.soli-tabs{ display:flex; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+.tab{ padding:10px 14px; border-radius:999px; border:2px solid var(--border); background:#fff; color:#444; text-decoration:none; font-weight:800; }
+.tab.active{ background: var(--amarelo); color:#3b2d00; border-color: transparent; }
+
+/* empty */
+.empty-box{ display:grid; place-items:center; gap:8px; text-align:center; padding:26px;
+  border:2px dashed var(--border); border-radius: var(--radius-lg); color:#6a6a6a; background:#fff; }
+
+/* grid de cards */
+.soli-grid{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; }
+.soli-card{ display:grid; grid-template-columns: 74px 1fr; gap:12px; text-decoration:none;
+  border:2px solid var(--border); border-radius: var(--radius-lg); padding:12px; background:#fff; color:inherit; }
+.soli-card:hover{ filter:brightness(.98); }
+
+.soli-avatar{ width:74px; height:74px; border-radius:50%; overflow:hidden; display:grid; place-items:center; background:#fff; border:3px solid var(--border); }
+.soli-avatar img{ width:100%; height:100%; object-fit:cover; object-position:center; }
+.soli-avatar i{ font-size:40px; color: color-mix(in oklab, var(--roxo) 60%, #777); }
+
+.soli-body{ display:grid; gap:6px; }
+.soli-name{ margin:0; font-weight:800; color:var(--ink); }
+.soli-meta{ margin:0; color:#575757; font-size:.95rem; }
+.soli-meta i{ color:var(--roxo); margin-right:6px; }
+.soli-foot{ display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.badge{ padding:6px 10px; border-radius:999px; font-weight:800; border:2px solid var(--border); background:#fff; }
+.badge-pendente{ background:#fff4bf; border-color:#ffe68a; }
+.badge-aceita{ background:#d6ffe0; border-color:#a8f4bc; }
+.badge-recusada{ background:#ffe0e0; border-color:#ffc1c1; }
+.date{ color:#555; display:inline-grid; grid-auto-flow:column; gap:6px; align-items:center; }
+
+/* detalhe */
+.soli-detail-card{
+  display:grid; grid-template-columns: 280px 1fr; gap:22px;
+  background:var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);
+  padding: clamp(22px,3vw,34px);
+}
+.soli-avatar.xl{ width:160px; height:160px; border-width:4px; }
+.pill-list{ display:grid; gap:10px; margin-top:12px; }
+.pill{
+  display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center;
+  width:max-content; background: color-mix(in oklab, var(--roxo) 8%, #fff);
+  border:2px solid var(--border); border-radius: 999px; padding:8px 12px;
+  color:#4a4a4a; font-size:.95rem;
+}
+.pill i{ color:var(--roxo); }
+
+.right{ display:grid; gap:12px; }
+.aluno-name{ margin:0; font-size: clamp(20px,2vw,26px); color: var(--ink); font-weight:900; }
+.grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+.field label{ display:block; font-size:.86rem; color:#666; margin-bottom:4px; }
+.field p{ margin:0; padding:12px 14px; background:#fff; border:2px solid var(--border); border-radius: var(--radius-md); color:var(--ink); }
+.field.full{ grid-column: 1 / -1; }
+
+.action-row{ margin-top:10px; }
+.decide{ display:grid; gap:10px; }
+.btn-accept, .btn-reject, .btn-outline{
+  display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center; cursor:pointer;
+  border-radius: var(--radius-sm); padding:12px 16px; font-weight:800; font-size:1rem;
+}
+.btn-accept{ background:#d6ffe0; border:2px solid #a8f4bc; }
+.btn-reject{ background:#ffe0e0; border:2px solid #ffc1c1; }
+.btn-outline{ background:#fff; border:2px solid var(--border); }
+.reject{ display:grid; grid-template-columns: 1fr auto; gap:8px; }
+.motivo{ padding:12px 14px; border-radius: var(--radius-sm); border:2px solid var(--border); }
+.alert-reason{
+  margin-top:8px; padding:12px 14px; background:#fff4bf; border:2px solid #ffe68a; border-radius: var(--radius-md);
+}
+
+@media (max-width: 960px){
+  .soli-grid{ grid-template-columns: 1fr; }
+  .soli-detail-card{ grid-template-columns: 1fr; }
+  .soli-avatar.xl{ justify-self:center; }
+}
+/* subtítulo das seções (Dados / Documentação) */
+.soli-subtitle{
+  margin: 10px 0 6px;
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--roxo);
+}
+
+/* tabela de documentos */
+.docs-wrapper{
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--border);
+  background: #fff;
+}
+
+.docs-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+.docs-table tr:nth-child(even){
+  background: #faf8ff;
+}
+
+.docs-table td{
+  padding: 10px 14px;
+  border-bottom: 1px solid color-mix(in oklab, var(--roxo) 8%, #eee);
+}
+
+.docs-table tr:last-child td{
+  border-bottom: none;
+}
+
+.doc-col-label{
+  color: #444;
+}
+
+.doc-col-action{
+  white-space: nowrap;
+  text-align: left;
+}
+
+.doc-col-action i{
+  margin-right: 6px;
+  font-size: 1rem;
+  vertical-align: middle;
+  color: var(--roxo);
+}
+
+.doc-col-action a{
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--roxo);
+}
+
+.doc-col-action a:hover{
+  text-decoration: underline;
+}
+
+/* linha dos botões ACEITAR / RECUSAR */
+.buttons-row{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* deixa o textarea da recusa com 100% da largura dentro da grid .reject */
+.reject .motivo{
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+}

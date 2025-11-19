@@ -1,0 +1,205 @@
+:root{
+  --roxo: var(--bm-purple, #6a2ee8);
+  --amarelo: var(--bm-yellow, #f6c12d);
+  --ink:#1f1f1f;
+  --bg: var(--bm-bg, #efe8fb);
+  --white:#fff;
+  --b: color-mix(in oklab, var(--roxo) 20%, #fff);
+  --rad:16px;
+  --sh: 0 12px 24px rgba(0,0,0,.08);
+}
+
+/* ========== ÁREA DE CONTEÚDO PADRÃO (igual outras telas) ========== */
+.content{
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--bg);
+}
+
+.page-head h1{
+  margin: 0 0 18px 0;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+/* ========== CARD DO FORM DE HORÁRIO ========== */
+.viagem-form-card{
+  background: var(--white);
+  border-radius: 24px;
+  border: 2px solid var(--b);
+  box-shadow: var(--sh);
+  padding: 18px 20px 20px;
+  max-width: 720px;
+}
+
+/* Form em coluna */
+.viagem-form{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Linhas do form */
+.form-row{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row-inline{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Labels */
+.form-row label{
+  font-size: .9rem;
+  font-weight: 700;
+  color: #7a719f;
+}
+
+/* Inputs / selects / time */
+.form-row input,
+.form-row select{
+  height: 46px;
+  border-radius: 14px;
+  border: 2px solid var(--b);
+  padding: 0 12px;
+  font-size: .95rem;
+  outline: none;
+  background: #fff;
+}
+
+.form-row input:focus,
+.form-row select:focus{
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--roxo) 20%, transparent);
+}
+
+/* Asterisco de campo obrigatório */
+.required{
+  color: #c62828;
+  font-weight: 900;
+}
+
+/* Ações do formulário */
+.form-actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Botões (seguindo padrão BusMate) */
+.btn-primary{
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  background: var(--amarelo);
+  color: #3b2d00;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--sh);
+}
+
+.btn-primary:hover{
+  filter: brightness(.97);
+}
+
+.btn-secondary{
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  border: 2px solid var(--b);
+  padding: 10px 16px;
+  font-size: .95rem;
+  font-weight: 700;
+  color: #555;
+  background: #f8f5ff;
+  text-decoration: none;
+}
+
+.btn-secondary:hover{
+  filter: brightness(.97);
+}
+
+/* Ícones dentro dos botões */
+.btn-primary i,
+.btn-secondary i{
+  font-size: 1rem;
+}
+
+/* ===== Responsivo do form ===== */
+@media (max-width: 760px){
+  .content{
+    padding: 16px;
+  }
+
+  .viagem-form-card{
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .form-row-inline{
+    flex-direction: column;
+  }
+
+  .form-actions{
+    flex-direction: column;
+  }
+
+  .form-actions .btn-primary,
+  .form-actions .btn-secondary{
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   SEU BLOCO ORIGINAL .va-* (mantido para outras telas)
+   ========================================================= */
+.va-wrap{max-width:1080px;margin:24px auto;padding:0 16px}
+.back-link{color:var(--roxo);text-decoration:none;font-weight:800}
+.back-link:hover{text-decoration:underline}
+h2{color:var(--roxo);margin:8px 0 16px}
+
+.alert{padding:10px 12px;border-radius:10px;margin:10px 0}
+.alert.ok{background:#e8f7ed;border:2px solid #b8e4c4}
+.alert.erro{background:#fde8e8;border:2px solid #f4b7b7}
+
+.va-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.va-card{background:var(--white);border:2px solid var(--b);border-radius:var(--rad);box-shadow:var(--sh);display:grid}
+.va-card .va-thumb{width:100%;aspect-ratio:16/9;overflow:hidden;border-bottom:2px solid var(--b)}
+.va-card .va-thumb img{width:100%;height:100%;object-fit:cover}
+.va-placeholder{display:grid;place-items:center;width:100%;height:100%;color:#777;background:#faf8ff}
+.va-body{padding:12px;display:grid;gap:6px}
+.va-actions{padding:12px;display:flex;gap:10px;justify-content:flex-end}
+
+.btn-primary,.btn-outline,.btn-danger{
+  display:inline-block;padding:10px 14px;border-radius:10px;font-weight:800;text-decoration:none;cursor:pointer
+}
+.btn-outline{background:#fff;border:2px solid var(--roxo);color:var(--roxo)}
+.btn-danger{background:#ffeded;border:2px solid #ff8e8e;color:#a22020}
+
+.va-form{display:grid;gap:12px;background:var(--white);border:2px solid var(--b);border-radius:var(--rad);box-shadow:var(--sh);padding:16px}
+.va-input{width:100%;padding:10px 12px;border:2px solid var(--b);border-radius:10px}
+.va-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.va-three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.va-thumb-small{display:grid;place-items:center}
+.va-card.pad{padding:12px}
+.va-table{display:grid;gap:6px;margin-top:8px}
+.va-table .row{display:grid;grid-template-columns:80px 1fr 1fr 1fr 110px 140px;gap:8px;align-items:center}
+.va-table .head{font-weight:800;color:#4a26a4}
+.row-actions{display:flex;gap:8px;justify-content:flex-end}
+@media (max-width:800px){
+  .va-two{grid-template-columns:1fr}
+  .va-three{grid-template-columns:1fr}
+  .va-table .row{grid-template-columns:70px 1fr 1fr 1fr 100px 120px}
+}
