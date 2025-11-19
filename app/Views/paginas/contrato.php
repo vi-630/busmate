@@ -219,11 +219,15 @@ if (!empty($_SESSION['user_id'])) {
         </button>
       </div>
     <?php endif; ?>
-    <?php if (!$pagamento || ($pagamento && $pagamento->paga_situacao === 'RECUSADO')): ?>
-      <?php if ($pagamento && $pagamento->paga_situacao === 'RECUSADO'): ?>
+    <?php if (!$pagamento || ($pagamento && ($pagamento->paga_situacao === 'RECUSADO' || $pagamento->paga_situacao === 'FALHOU'))): ?>
+      <?php if ($pagamento && ($pagamento->paga_situacao === 'RECUSADO' || $pagamento->paga_situacao === 'FALHOU')): ?>
         <p style="color:#d9534f; margin-bottom:12px;">
           <i class="bi bi-exclamation-circle-fill"></i>
-          Seu comprovante foi recusado. Envie um novo comprovante.
+          Seu comprovante foi recusado.
+          <?php if (!empty($pagamento->paga_motivo)): ?>
+            <br><strong>Motivo:</strong> <?= htmlspecialchars($pagamento->paga_motivo) ?>
+          <?php endif; ?>
+          <br>Envie um novo comprovante.
         </p>
       <?php else: ?>
         <p style="margin-top: 14px;">Não encontramos pagamento para este mês.</p>

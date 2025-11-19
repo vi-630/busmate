@@ -201,12 +201,13 @@ class Solicitacoes extends Controllers
                 usua_cpf, usua_foto, tius_id, usua_senha_hash, usua_matricula, usua_situacao,
                 empr_id
             ) VALUES (
-                :nome, NULL, :curso, :escola, :turno, :endereco,
+                :nome, :turma, :curso, :escola, :turno, :endereco,
                 NULL, :foto, 3, :senha, :matricula, 'A',
                 :empr
             )
         ");
         $db->bind(':nome', $sol->soli_nome);
+        $db->bind(':turma', $sol->soli_turma);
         $db->bind(':curso', $sol->soli_curso);
         $db->bind(':escola', $sol->soli_escola);
         $db->bind(':turno', $sol->soli_turno);

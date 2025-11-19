@@ -199,23 +199,25 @@ INSERT INTO `email` (`emai_id`, `emai_endereco`, `usua_id`, `is_principal`, `cre
 (5, 'nicolle.matias@busmate.com', 5, 1, '2025-10-28 04:50:48'),
 (6, 'vitoria.alvis@busmate.com', 6, 1, '2025-10-28 04:50:48');
 
-CREATE TABLE `pagamento` (
-  `paga_id` int(11) NOT NULL AUTO_INCREMENT,
-  `paga_valor` decimal(10,2) NOT NULL,
-  `usua_id` int(11) NOT NULL,
-  `cont_id` int(11) DEFAULT NULL,
-  `paga_competencia` char(7) DEFAULT NULL,
-  `paga_metodo` enum('PIX','CARTAO','BOLETO') DEFAULT 'PIX',
-  `paga_situacao` enum('PENDENTE','PAGO','FALHOU','ESTORNADO') NOT NULL DEFAULT 'PENDENTE',
-  `paga_dth` timestamp NULL DEFAULT NULL,
-  `paga_comprovante_url` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`paga_id`),
-  UNIQUE KEY `uq_pag_user_comp` (`usua_id`,`paga_competencia`),
-  KEY `idx_pag_user_status` (`usua_id`,`paga_situacao`),
-  KEY `fk_pagamento_contrato` (`cont_id`),
-  CONSTRAINT `fk_pagamento_contrato_ref` FOREIGN KEY (`cont_id`) REFERENCES `contrato` (`cont_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `fk_pagamento_usuario` FOREIGN KEY (`usua_id`) REFERENCES `usuario` (`usua_id`) ON UPDATE CASCADE
+CREATE TABLE pagamento (
+  paga_id int(11) NOT NULL AUTO_INCREMENT,
+  paga_valor decimal(10,2) NOT NULL,
+  usua_id int(11) NOT NULL,
+  cont_id int(11) DEFAULT NULL,
+  paga_competencia char(7) DEFAULT NULL,
+  paga_metodo enum('PIX','CARTAO','BOLETO') DEFAULT 'PIX',
+  paga_situacao enum('PENDENTE','PAGO','FALHOU','ESTORNADO') NOT NULL DEFAULT 'PENDENTE',
+  paga_dth timestamp NULL DEFAULT NULL,
+  paga_comprovante_url varchar(255) DEFAULT NULL,
+  paga_motivo varchar(255) DEFAULT NULL,
+  PRIMARY KEY (paga_id),
+  UNIQUE KEY uq_pag_user_comp (usua_id,paga_competencia),
+  KEY idx_pag_user_status (usua_id,paga_situacao),
+  KEY fk_pagamento_contrato (cont_id),
+  CONSTRAINT fk_pagamento_contrato_ref FOREIGN KEY (cont_id) REFERENCES contrato (cont_id) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT fk_pagamento_usuario FOREIGN KEY (usua_id) REFERENCES usuario (usua_id) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 CREATE TABLE `solicitacao_aluno` (
   `soli_id` int(11) NOT NULL AUTO_INCREMENT,

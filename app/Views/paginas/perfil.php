@@ -79,7 +79,7 @@ if (!empty($usuario->usua_foto)) {
             <i class="bi bi-bus-front-fill"></i>
             <span>Viagens</span>
           </a>
-          <a href="#" class="item">
+          <a href="<?=URL?>/paginas/forum" class="item">
             <i class="bi bi-chat-dots-fill"></i>
             <span>Fórum</span>
           </a>
