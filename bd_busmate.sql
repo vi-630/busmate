@@ -61,6 +61,7 @@ CREATE TABLE `usuario` (
   CONSTRAINT `fk_usuario_empresa` FOREIGN KEY (`empr_id`) REFERENCES `empresa` (`empr_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- SENHA = 123456
 INSERT INTO `usuario` (`usua_id`, `usua_nome`, `usua_turma`, `usua_curso`, `usua_escola`, `usua_turno`, `usua_endereco`, `usua_cpf`, `usua_foto`, `tius_id`, `usua_senha_hash`, `usua_matricula`, `usua_situacao`, `usua_dth_criacao`, `usua_dth_update`, `empr_id`) VALUES
 (1, 'Ana Méllany Sales Nascimento', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '$2y$10$pnh9nmDXu3uSoXbLljiuuuCFJW4NnU7sCHQ2bvDuMiypOaZpxxwPy', NULL, 'A', '2025-10-28 04:46:19', '2025-10-28 05:58:50', NULL),
 (2, 'Juliany Gabriela Abiorana Souza de Carvalho', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '$2y$10$yIRiGRNXXn7dWUpWGlBzHuGtbGtJjbsicxJvIhvB0s169d5GjuCA.', NULL, 'A', '2025-10-28 04:46:19', '2025-10-28 05:59:33', NULL),
